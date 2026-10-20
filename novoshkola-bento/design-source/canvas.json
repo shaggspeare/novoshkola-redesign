@@ -1,0 +1,41 @@
+{
+  "v": 3,
+  "createdOnFiles": {"v": 1, "at": "2026-10-19T15:55:00Z"},
+  "title": "Новопечерська школа — редизайн «Модульний бенто»",
+  "launch": {"view": "canvas"},
+  "pages": [],
+  "boards": {
+    "Main.dc.html": {"x": 0, "y": 0, "w": 1440, "h": 6750, "title": "Головна", "expand": "fill", "is_interactive": true},
+    "About.dc.html": {"x": 1520, "y": 0, "w": 1440, "h": 8350, "title": "Про школу", "expand": "fill", "is_interactive": true},
+    "Programs.dc.html": {"x": 3040, "y": 0, "w": 1440, "h": 9650, "title": "Навчання та U-CAN", "expand": "fill", "is_interactive": true},
+    "Enrolment.dc.html": {"x": 4560, "y": 0, "w": 1440, "h": 5800, "title": "Вступ", "expand": "fill", "is_interactive": true},
+    "News.dc.html": {"x": 0, "y": 10070, "w": 1440, "h": 3650, "title": "Новини", "expand": "fill", "is_interactive": true},
+    "Article.dc.html": {"x": 1520, "y": 10070, "w": 1440, "h": 4550, "title": "Новина — шаблон статті", "expand": "fill", "is_interactive": true},
+    "Parents.dc.html": {"x": 3040, "y": 10070, "w": 1440, "h": 3800, "title": "Батькам", "expand": "fill", "is_interactive": true},
+    "Contacts.dc.html": {"x": 4560, "y": 10070, "w": 1440, "h": 3450, "title": "Контакти", "expand": "fill", "is_interactive": true},
+    "MobileHome.dc.html": {"x": 0, "y": 15040, "w": 390, "h": 7110, "title": "Мобільна — головна", "is_interactive": true},
+    "MobileMenu.dc.html": {"x": 470, "y": 15040, "w": 390, "h": 844, "title": "Мобільна — меню", "is_interactive": true},
+    "MobileEnrolment.dc.html": {"x": 940, "y": 15040, "w": 390, "h": 8464, "title": "Мобільна — вступ", "is_interactive": true},
+    "Styleguide.dc.html": {"x": 1520, "y": 15040, "w": 1440, "h": 11550, "title": "Дизайн-система", "expand": "fill", "is_interactive": true}
+  },
+  "order": [
+    "Main.dc.html",
+    "About.dc.html",
+    "Programs.dc.html",
+    "Enrolment.dc.html",
+    "News.dc.html",
+    "Article.dc.html",
+    "Parents.dc.html",
+    "Contacts.dc.html",
+    "MobileHome.dc.html",
+    "MobileMenu.dc.html",
+    "MobileEnrolment.dc.html",
+    "Styleguide.dc.html"
+  ],
+  "notes": {
+    "rowMain": {"x": 0, "y": -300, "text": "Новопечерська школа — редизайн «Модульний бенто» · ключові сторінки", "kind": "title1", "maxW": 6000},
+    "rowService": {"x": 0, "y": 9770, "text": "Сервісні сторінки: новини, стаття, батькам, контакти", "kind": "title1", "maxW": 6000},
+    "rowMobile": {"x": 0, "y": 14740, "text": "Мобільна версія та дизайн-система", "kind": "title1", "maxW": 2960}
+  },
+  "designSystems": []
+}

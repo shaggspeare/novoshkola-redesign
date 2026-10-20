@@ -1,0 +1,855 @@
+<!doctype html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<title>Дизайн-система «Модульний бенто»</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#F1F2EE}
+a{color:#5B3FA8;text-decoration:none}a:hover{color:#4A3190}
+.nv{transition:background .15s,color .15s}.nv:hover{background:#F1F2EE !important;color:#16181A !important}
+.bp{transition:background .15s}.bp:hover{background:#4A3190 !important;color:#FFFFFF !important}
+.bg2{transition:background .15s}.bg2:hover{background:#7CB733 !important;color:#16181A !important}
+.bw{transition:background .15s}.bw:hover{background:#8CC63F !important;color:#16181A !important}
+.bo{transition:border-color .15s}.bo:hover{border-color:#FFFFFF !important;color:#FFFFFF !important}
+.bl{transition:background .15s,color .15s}.bl:hover{background:#16181A !important;color:#FFFFFF !important;border-color:#16181A !important}
+.tl{transition:box-shadow .2s ease,transform .2s ease}.tl:active{transform:scale(.99)}
+.ar{transition:background .15s,color .15s}
+@media (hover:hover){.tl:hover{box-shadow:0 14px 34px rgba(22,24,26,0.09) !important;transform:translateY(-2px)}.tl:hover .ar{background:#16181A !important;color:#FFFFFF !important}}
+.lk:hover{color:#16181A !important}
+.fl{transition:color .15s}.fl:hover{color:#FFFFFF !important}
+.ib{transition:background .15s}.ib:hover{background:#E4E6E1 !important}
+.sc:hover{background:#8CC63F !important;color:#16181A !important}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,summary:focus-visible{outline:3px solid #5B3FA8;outline-offset:2px;box-shadow:0 0 0 2px #FFFFFF}
+input::placeholder,textarea::placeholder{color:#6B6F73}
+[id]{scroll-margin-top:100px}
+.nw{white-space:nowrap}
+.sr{position:absolute !important;width:1px !important;height:1px !important;padding:0 !important;margin:-1px !important;overflow:hidden !important;clip:rect(0 0 0 0) !important;white-space:nowrap !important;border:0 !important}
+.skip{position:absolute;left:16px;top:-120px;z-index:300;padding:12px 18px;border-radius:999px;background:#16181A;color:#FFFFFF !important;font-weight:700}.skip:focus{top:16px}
+a[href^="tel:"]{white-space:nowrap}
+.hdr-burger{display:none !important}
+.mbar{display:none !important}
+@media (max-width:1099px){.hdr-nav,.hdr-lang,.hdr-search{display:none !important}.hdr-burger{display:flex !important}}
+@media (max-width:599px){.hdr{top:12px !important;margin:12px 0 16px !important;padding:6px 6px 6px 18px !important}.mbar{display:flex !important}.ft-nav{grid-template-columns:repeat(2,minmax(0,1fr)) !important}.ft-nav a{display:flex;align-items:center;min-height:44px}[id]{scroll-margin-top:84px}}
+.sgi{display:flex;flex-wrap:wrap;gap:8px}
+@media (min-width:900px){.sgi{position:sticky;top:12px;z-index:30;padding:8px;margin:16px -8px 0 !important;border-radius:999px;background:rgba(241,242,238,0.94)}}
+@media (max-width:599px){.sgi,.tabs{flex-wrap:nowrap !important;overflow-x:auto;scrollbar-width:none}.sgi>a,.tabs>button{flex:none}}
+.lbl{font-size:12px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:#5F6366}
+.cap{font-size:12px;font-weight:700;line-height:1.35;color:#5F6366}
+.st{display:flex;flex-direction:column;align-items:flex-start;gap:8px}
+.b{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:0 22px;border:0;border-radius:999px;font-family:inherit;font-size:14.5px;font-weight:700;cursor:pointer;white-space:nowrap}
+.fr{outline:3px solid #5B3FA8;outline-offset:2px;box-shadow:0 0 0 2px #FFFFFF}
+.ty{display:flex;flex-wrap:wrap;align-items:baseline;gap:8px 32px;padding:20px 0;border-bottom:1px solid #EDEEEA}
+.tyl{flex:0 0 200px;display:flex;flex-direction:column;gap:4px}
+.tyl b{font-size:14px;font-weight:800}
+.tyl span{font-size:12.5px;font-weight:700;color:#5F6366;font-variant-numeric:tabular-nums}
+.tys{flex:1 1 380px;min-width:0}
+.nb{flex:none;width:22px;height:22px;border-radius:50%;background:#5B3FA8;color:#FFFFFF;display:inline-flex;align-items:center;justify-content:center;font-size:11.5px;font-weight:800}
+.sw{border-radius:28px;background:#FFFFFF;padding:14px 14px 24px;display:flex;flex-direction:column;gap:14px;box-sizing:border-box}
+.swm{display:flex;flex-direction:column;gap:6px;padding:0 10px}
+.ok,.no,.nt{align-self:flex-start;padding:5px 10px;border-radius:999px;font-size:12.5px;font-weight:700}
+.ok{background:#F3F6EE;color:#4E7A1F}.no{background:#FDECEC;color:#C8161C}.nt{background:#F1F2EE;color:#3A3E42}
+.tx{display:flex;flex-direction:column;gap:8px;padding:14px;border-radius:18px;background:#F1F2EE}
+.txs{display:flex;align-items:center;justify-content:center;gap:12px;height:64px;border-radius:12px;font-size:21px;font-weight:800}
+.ic{display:flex;flex-direction:column;align-items:center;gap:8px;padding:16px 6px 12px;border-radius:18px;background:#F1F2EE;color:#16181A}
+.ic svg{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.ic span{font-size:12px;font-weight:700;color:#5F6366}
+.tg{display:inline-flex;align-items:center;margin-left:4px;padding:1px 7px;border-radius:999px;font-size:11.5px;font-weight:800;vertical-align:1px;white-space:nowrap}
+.tg-n{background:#F3F6EE;color:#4E7A1F}.tg-m{background:#EFEAFA;color:#5B3FA8}.tg-j{background:#F3EEE4;color:#6E5A2E}
+.fm{display:flex;flex-wrap:wrap;gap:4px 20px;padding:13px 0;border-bottom:1px solid #EDEEEA;font-size:14.5px;line-height:1.5}
+.fm b{flex:0 0 150px;font-weight:800}
+.fmw b{flex-basis:320px}
+.ach{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 16px;border-radius:999px;border:1.5px solid #E3E5E0;background:#FFFFFF;color:#16181A;font-size:14px;font-weight:700}
+.ach svg{width:14px;height:14px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.eb{display:inline-flex;align-items:center;gap:10px;font-size:12.5px;font-weight:800;letter-spacing:1.4px;text-transform:uppercase;color:#5F6366}.eb::before{content:"";width:26px;height:2px;background:#8CC63F}
+.h2s{margin:0;font-size:clamp(30px,3vw,40px);line-height:1.1;font-weight:800;letter-spacing:-1.4px;text-wrap:balance}
+.swt{display:flex;align-items:baseline;justify-content:space-between;gap:8px}.swt b{font-size:18px;font-weight:800;letter-spacing:-0.3px}.swt span{font-size:13.5px;font-weight:700;color:#5F6366;font-variant-numeric:tabular-nums}
+.swd{font-size:14.5px;line-height:1.5;color:#3A3E42}
+.pc{border-radius:28px;background:#FFFFFF;padding:12px 12px 24px;display:flex;flex-direction:column;gap:16px;box-sizing:border-box}
+.ps{aspect-ratio:4/3;border-radius:20px;background-image:repeating-linear-gradient(135deg,rgba(22,24,26,0.035) 0 1px,transparent 1px 12px);display:flex;align-items:flex-end;padding:12px;box-sizing:border-box}
+.ps span{display:inline-flex;align-items:center;gap:8px;padding:7px 12px;border-radius:999px;background:rgba(255,255,255,0.86);font-size:12px;font-weight:700;color:#3A3E42}
+@media (max-width:599px){.hide-sm{display:none !important}}
+</style>
+</helmet>
+<div style="background: #F1F2EE; color: #16181A; font-family: 'Manrope', system-ui, -apple-system, 'Segoe UI', sans-serif; -webkit-font-smoothing: antialiased">
+<div style="max-width: 1440px; margin: 0 auto; padding: 28px clamp(16px, 2vw, 28px) 56px; box-sizing: border-box; display: flex; flex-direction: column">
+
+<section aria-labelledby="sg-title" style="display: flex; flex-wrap: wrap; gap: 16px">
+<div style="flex: 1.6 1 620px; min-width: 0; border-radius: 28px; background: #FFFFFF; padding: clamp(28px, 4vw, 56px); display: flex; flex-direction: column; gap: 22px; min-height: 440px; box-sizing: border-box">
+<span class="eb">Новопечерська школа · редизайн 2026</span>
+<h1 id="sg-title" style="margin: 0; font-size: clamp(40px, 5vw, 68px); line-height: 1.02; font-weight: 800; letter-spacing: -2.6px; text-wrap: balance">Дизайн-система «Модульний бенто»</h1>
+<p style="margin: 0; max-width: 640px; font-size: 18px; line-height: 1.6; color: #54585C; text-wrap: pretty">Правила й компоненти, з яких зібрано всі сторінки концепту: колір, типографіка, сітка, плитки, кнопки, форми й навігація — у версії після UX-рев’ю.</p>
+<div style="margin-top: auto; display: flex; flex-wrap: wrap; gap: 8px">
+<span style="padding: 8px 14px; border-radius: 999px; background: #F1F2EE; font-size: 13px; font-weight: 700; color: #3A3E42">Версія 1.1</span>
+<span style="padding: 8px 14px; border-radius: 999px; background: #F1F2EE; font-size: 13px; font-weight: 700; color: #3A3E42">Жовтень 2026</span>
+<span style="padding: 8px 14px; border-radius: 999px; background: #F1F2EE; font-size: 13px; font-weight: 700; color: #3A3E42">Шрифт: Manrope</span>
+<span style="padding: 8px 14px; border-radius: 999px; background: #F1F2EE; font-size: 13px; font-weight: 700; color: #3A3E42">Іконки: Lucide</span>
+</div>
+</div>
+<div style="flex: 1 1 380px; min-width: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px">
+<div style="border-radius: 28px; background-color: #2B3034; background-image: repeating-linear-gradient(135deg, rgba(255,255,255,0.045) 0 1px, transparent 1px 14px); color: #FFFFFF; padding: 22px; display: flex; flex-direction: column; gap: 6px; min-height: 212px; box-sizing: border-box">
+<span style="color: rgba(255,255,255,0.6)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"></path><circle cx="12" cy="13" r="3"></circle></svg></span>
+<span style="margin-top: auto; font-size: 17px; font-weight: 800; letter-spacing: -0.3px">Фото-плитка</span>
+<span style="font-size: 13px; line-height: 1.45; color: rgba(255,255,255,0.78)">Герой, програми, новини</span>
+</div>
+<div style="border-radius: 28px; background: #5B3FA8; color: #FFFFFF; padding: 22px; display: flex; flex-direction: column; gap: 6px; min-height: 212px; box-sizing: border-box">
+<span style="color: rgba(255,255,255,0.6)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"></path><path d="M5 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"></path></svg></span>
+<span style="margin-top: auto; font-size: 17px; font-weight: 800; letter-spacing: -0.3px">Акцентна плитка</span>
+<span style="font-size: 13px; line-height: 1.45; color: rgba(255,255,255,0.78)">U-CAN, відгуки, ключовий крок</span>
+</div>
+<div style="border-radius: 28px; background: #FFFFFF; padding: 22px; display: flex; flex-direction: column; gap: 6px; min-height: 212px; box-sizing: border-box">
+<span style="color: #5F6366"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 2v4"></path><path d="M16 2v4"></path><rect width="18" height="18" x="3" y="4" rx="2"></rect><path d="M3 10h18"></path><path d="M8 14h.01"></path><path d="M12 14h.01"></path><path d="M16 14h.01"></path><path d="M8 18h.01"></path><path d="M12 18h.01"></path><path d="M16 18h.01"></path></svg></span>
+<span style="margin-top: auto; font-size: 17px; font-weight: 800; letter-spacing: -0.3px">Інфо-плитка</span>
+<span style="font-size: 13px; line-height: 1.45; color: #5F6366">Дати, списки, контакти</span>
+</div>
+<div style="border-radius: 28px; background: #8CC63F; color: #16181A; padding: 22px; display: flex; flex-direction: column; gap: 6px; min-height: 212px; box-sizing: border-box">
+<span style="font-size: 44px; line-height: 1; font-weight: 800; letter-spacing: -2px">550</span>
+<span style="margin-top: auto; font-size: 17px; font-weight: 800; letter-spacing: -0.3px">Плитка-цифра</span>
+<span style="font-size: 13px; line-height: 1.45; color: rgba(22,24,26,0.78)">Факти замість гасел</span>
+</div>
+</div>
+</section>
+
+<nav class="sgi" aria-label="Розділи дизайн-системи" style="margin-top: 16px">
+<a class="bl ach" href="#sg-principles">01 Принципи<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14"></path><path d="m19 12-7 7-7-7"></path></svg></a>
+<a class="bl ach" href="#sg-color">02 Колір<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14"></path><path d="m19 12-7 7-7-7"></path></svg></a>
+<a class="bl ach" href="#sg-type">03 Типографіка<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14"></path><path d="m19 12-7 7-7-7"></path></svg></a>
+<a class="bl ach" href="#sg-grid">04 Сітка<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14"></path><path d="m19 12-7 7-7-7"></path></svg></a>
+<a class="bl ach" href="#sg-components">05 Компоненти<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14"></path><path d="m19 12-7 7-7-7"></path></svg></a>
+<a class="bl ach" href="#sg-icons">06 Іконки<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14"></path><path d="m19 12-7 7-7-7"></path></svg></a>
+<a class="bl ach" href="#sg-photo">07 Фото<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14"></path><path d="m19 12-7 7-7-7"></path></svg></a>
+<a class="bl ach" href="#sg-nav">08 Навігація<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14"></path><path d="m19 12-7 7-7-7"></path></svg></a>
+</nav>
+
+<section aria-labelledby="sg-principles" style="margin-top: 56px">
+<div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 16px 32px; padding: 0 8px 22px">
+<div style="display: flex; flex-direction: column; gap: 12px; max-width: 760px">
+<span class="eb">01 · Принципи</span>
+<h2 id="sg-principles" class="h2s">Чотири правила, на яких тримається система</h2>
+</div>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr)); gap: 16px">
+<div style="border-radius: 28px; background: #FFFFFF; padding: 30px; display: flex; flex-direction: column; gap: 12px; min-height: 240px; box-sizing: border-box">
+<span style="width: 44px; height: 44px; border-radius: 50%; background: #EFEAFA; color: #5B3FA8; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 800">01</span>
+<h3 style="margin: 6px 0 0; font-size: 21px; line-height: 1.25; font-weight: 800; letter-spacing: -0.5px">«Одна плитка — одна думка»</h3>
+<p style="margin: 0; font-size: 15px; line-height: 1.6; color: #54585C">Кожен модуль відповідає на одне запитання батьків. Плитки складаються, як конструктор, — від головної до сторінки новини.</p>
+</div>
+<div style="border-radius: 28px; background: #FFFFFF; padding: 30px; display: flex; flex-direction: column; gap: 12px; min-height: 240px; box-sizing: border-box">
+<span style="width: 44px; height: 44px; border-radius: 50%; background: #F3F6EE; color: #4E7A1F; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 800">02</span>
+<h3 style="margin: 6px 0 0; font-size: 21px; line-height: 1.25; font-weight: 800; letter-spacing: -0.5px">«Факти, а не гасла»</h3>
+<p style="margin: 0; font-size: 15px; line-height: 1.6; color: #54585C">Замість загальних слів — цифри й дати з життя школи: до 550 учнів, 9585&nbsp;м², співбесіди до 1 класу з лютого.</p>
+</div>
+<div style="border-radius: 28px; background: #FFFFFF; padding: 30px; display: flex; flex-direction: column; gap: 12px; min-height: 240px; box-sizing: border-box">
+<span style="width: 44px; height: 44px; border-radius: 50%; background: #FDECEC; color: #C8161C; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 800">03</span>
+<h3 style="margin: 6px 0 0; font-size: 21px; line-height: 1.25; font-weight: 800; letter-spacing: -0.5px">«Наступний крок — завжди поруч»</h3>
+<p style="margin: 0; font-size: 15px; line-height: 1.6; color: #54585C">Шлях батьків: знайомство → екскурсія → анкета → співбесіди. «Записатися на екскурсію» та «Заповнити анкету» доступні з кожної сторінки, а на телефоні — з липкої панелі.</p>
+</div>
+<div style="border-radius: 28px; background: #FFFFFF; padding: 30px; display: flex; flex-direction: column; gap: 12px; min-height: 240px; box-sizing: border-box">
+<span style="width: 44px; height: 44px; border-radius: 50%; background: #F1F2EE; color: #16181A; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 800">04</span>
+<h3 style="margin: 6px 0 0; font-size: 21px; line-height: 1.25; font-weight: 800; letter-spacing: -0.5px">«Доступно для всіх»</h3>
+<p style="margin: 0; font-size: 15px; line-height: 1.6; color: #54585C">Контраст рівня WCAG AA, цілі натискання від 44&nbsp;px, видимий двоколірний фокус на будь-якому тлі й повна навігація з клавіатури.</p>
+</div>
+</div>
+</section>
+
+<section aria-labelledby="sg-color" style="margin-top: 56px">
+<div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 16px 32px; padding: 0 8px 22px">
+<div style="display: flex; flex-direction: column; gap: 12px; max-width: 760px">
+<span class="eb">02 · Колір</span>
+<h2 id="sg-color" class="h2s">Палітра бренду — з перевіреним контрастом</h2>
+</div>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); gap: 16px">
+<div class="sw">
+<div style="height: 128px; border-radius: 20px; background: #F1F2EE; border: 1px solid #E7E8E4; box-sizing: border-box"></div>
+<div class="swm">
+<span class="swt"><b>Ground</b><span>#F1F2EE</span></span>
+<span class="swd">Фон сторінки, підкладка іконок і чипів</span>
+<span class="ok">Muted на фоні 5,4:1 · AA</span>
+</div>
+</div>
+<div class="sw">
+<div style="height: 128px; border-radius: 20px; background: #FFFFFF; border: 1px solid #E7E8E4; box-sizing: border-box"></div>
+<div class="swm">
+<span class="swt"><b>Surface</b><span>#FFFFFF</span></span>
+<span class="swd">Плитки, картки, хедер; поля форм — #FBFBF9</span>
+<span class="ok">Ink на білому 17,8:1 · AAA</span>
+</div>
+</div>
+<div class="sw">
+<div style="height: 128px; border-radius: 20px; background: #16181A; display: flex; align-items: flex-end; gap: 6px; padding: 10px; box-sizing: border-box">
+<span style="padding: 5px 9px; border-radius: 999px; background: #3A3E42; color: #FFFFFF; font-size: 11.5px; font-weight: 800">Ink-2 #3A3E42</span>
+</div>
+<div class="swm">
+<span class="swt"><b>Ink</b><span>#16181A</span></span>
+<span class="swd">Текст, темні плитки, футер, активний фільтр</span>
+<span class="ok">Білий текст 17,8:1 · AAA</span>
+</div>
+</div>
+<div class="sw">
+<div style="height: 128px; border-radius: 20px; background: #5F6366"></div>
+<div class="swm">
+<span class="swt"><b>Muted</b><span>#5F6366</span></span>
+<span class="swd">Мітки, дати, другорядний текст</span>
+<span class="ok">6,1:1 на білому · 5,4:1 на фоні</span>
+</div>
+</div>
+<div class="sw">
+<div style="height: 128px; border-radius: 20px; background: #5B3FA8; display: flex; flex-wrap: wrap; align-items: flex-end; align-content: flex-end; gap: 6px; padding: 10px; box-sizing: border-box">
+<span style="padding: 5px 9px; border-radius: 999px; background: #4A3190; color: #FFFFFF; font-size: 11.5px; font-weight: 800">Hover #4A3190</span>
+<span style="padding: 5px 9px; border-radius: 999px; background: #EFEAFA; color: #5B3FA8; font-size: 11.5px; font-weight: 800">Tint #EFEAFA</span>
+<span style="padding: 5px 9px; border-radius: 999px; background: #6B52B1; color: #E2F3C9; font-size: 11.5px; font-weight: 800">Дата #E2F3C9</span>
+</div>
+<div class="swm">
+<span class="swt"><b>Purple</b><span>#5B3FA8</span></span>
+<span class="swd">Головний акцент: кабінет, U-CAN, відгуки, фокус</span>
+<span class="ok">Білий текст 7,7:1 · AAA</span>
+</div>
+</div>
+<div class="sw">
+<div style="height: 128px; border-radius: 20px; background: #8CC63F; display: flex; flex-wrap: wrap; align-items: flex-end; align-content: flex-end; gap: 6px; padding: 10px; box-sizing: border-box">
+<span style="padding: 5px 9px; border-radius: 999px; background: #F3F6EE; color: #4E7A1F; font-size: 11.5px; font-weight: 800">Tint #F3F6EE</span>
+<span style="padding: 5px 9px; border-radius: 999px; background: #4E7A1F; color: #FFFFFF; font-size: 11.5px; font-weight: 800">Dark #4E7A1F</span>
+</div>
+<div class="swm">
+<span class="swt"><b>Green</b><span>#8CC63F</span></span>
+<span class="swd">Дія: «Заповнити анкету», «Записатися на екскурсію»</span>
+<span style="display: flex; flex-wrap: wrap; gap: 6px; margin-top: 4px"><span class="ok">Ink на зеленому 8,7:1</span><span class="no">Білий текст — ні, 2,0:1</span></span>
+</div>
+</div>
+<div class="sw">
+<div style="height: 128px; border-radius: 20px; background: #E31E24; display: flex; flex-wrap: wrap; align-items: flex-end; align-content: flex-end; gap: 6px; padding: 10px; box-sizing: border-box">
+<span style="padding: 5px 9px; border-radius: 999px; background: #C8161C; color: #FFFFFF; font-size: 11.5px; font-weight: 800">Text #C8161C</span>
+<span style="padding: 5px 9px; border-radius: 999px; background: #FDECEC; color: #C8161C; font-size: 11.5px; font-weight: 800">Tint #FDECEC</span>
+</div>
+<div class="swm">
+<span class="swt"><b>Red</b><span>#E31E24</span></span>
+<span class="swd">Лише іконки й заливки; для тексту й помилок — #C8161C</span>
+<span class="ok">Текст #C8161C на білому 5,9:1</span>
+</div>
+</div>
+<div class="sw">
+<div style="height: 128px; border-radius: 20px; background: #FFFFFF; border: 1px solid #E7E8E4; box-sizing: border-box; display: flex; flex-direction: column; justify-content: center; gap: 14px; padding: 0 22px">
+<span style="height: 1px; background: #E7E8E4"></span><span style="height: 1px; background: #EDEEEA"></span><span style="height: 1px; background: #E7E8E4"></span>
+</div>
+<div class="swm">
+<span class="swt"><b>Line</b><span>#E7E8E4 · #EDEEEA</span></span>
+<span class="swd">Лише роздільники списків і рамки світлих свотчів. Рамка поля — #8A8F93</span>
+<span class="nt">1,2:1 — декоративний, не для полів і тексту</span>
+</div>
+</div>
+</div>
+
+<div style="margin-top: 16px; border-radius: 28px; background: #FFFFFF; padding: 32px; display: flex; flex-direction: column; gap: 18px; box-sizing: border-box">
+<div style="display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 8px 24px"><h3 style="margin: 0; font-size: 21px; line-height: 1.25; font-weight: 800; letter-spacing: -0.5px">Текст і рамки — перевірені пари</h3><span style="font-size: 13.5px; color: #5F6366">Контраст за WCAG 2.2 · текст ≥4,5:1 · рамки й іконки ≥3:1</span></div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr)); gap: 12px">
+<div class="tx"><span class="txs" style="background: #FFFFFF; color: #16181A">Аа Текст</span><span style="font-size: 14px; font-weight: 800">Ink · #16181A</span><span class="cap">Заголовки, основний текст</span><span class="ok">17,8:1 на білому · 15,8:1 на фоні</span></div>
+<div class="tx"><span class="txs" style="background: #FFFFFF; color: #22262A; font-weight: 400">Аа Текст</span><span style="font-size: 14px; font-weight: 800">Текст статті · #22262A</span><span class="cap">Тіло статті, не ширше 68ch</span><span class="ok">15,2:1 на білому</span></div>
+<div class="tx"><span class="txs" style="background: #FFFFFF; color: #3A3E42">Аа Текст</span><span style="font-size: 14px; font-weight: 800">Ink-2 · #3A3E42</span><span class="cap">Навігація, чипи, рядки списків</span><span class="ok">10,8:1 на білому · 9,6:1 на фоні</span></div>
+<div class="tx"><span class="txs" style="background: #FFFFFF; color: #54585C; font-weight: 500">Аа Текст</span><span style="font-size: 14px; font-weight: 800">Body · #54585C</span><span class="cap">Лід, абзаци в плитках</span><span class="ok">7,2:1 на білому · 6,4:1 на фоні</span></div>
+<div class="tx"><span class="txs" style="background: #FFFFFF; color: #5F6366; font-size: 15px">Мітка · 09.10.2026</span><span style="font-size: 14px; font-weight: 800">Muted · #5F6366</span><span class="cap">Мітки, дати, підписи</span><span class="ok">6,1:1 на білому · 5,4:1 на фоні</span></div>
+<div class="tx"><span class="txs" style="background: #16181A; color: #C9CDD1">Аа <span style="color: #9AA0A4; font-size: 15px">Мітка</span></span><span style="font-size: 14px; font-weight: 800">На Ink · #C9CDD1 · #9AA0A4</span><span class="cap">Текст і мітки на темних плитках</span><span class="ok">11,1:1 · 6,7:1</span></div>
+<div class="tx"><span class="txs" style="background: #5B3FA8; color: #FFFFFF">Аа <span style="color: rgba(255,255,255,0.78); font-size: 15px">Підпис 78 %</span></span><span style="font-size: 14px; font-weight: 800">На фіолетовому</span><span class="cap">Білий і білий 78 % — лише на чистому #5B3FA8</span><span class="ok">7,7:1 · 5,4:1</span></div>
+<div class="tx"><span class="txs" style="background: #6B52B1; color: rgba(255,255,255,0.9); font-size: 15px">Підпис 90 % <span style="color: #E2F3C9">весна 2019</span></span><span style="font-size: 14px; font-weight: 800">Фіолетова плитка + білий 10 %</span><span class="cap">Дрібний текст — білий 90 %, дати — #E2F3C9</span><span style="display: flex; flex-wrap: wrap; gap: 6px"><span class="ok">5,3:1 · 5,2:1</span><span class="no">78 % — 4,4:1 · #8CC63F — 3,0:1</span></span></div>
+<div class="tx"><span class="txs" style="background: #8CC63F; color: rgba(22,24,26,0.72); font-size: 15px">Підпис Ink 72 %</span><span style="font-size: 14px; font-weight: 800">На зеленому</span><span class="cap">Ink 100 % — 8,7:1; підписи — Ink 72 %</span><span style="display: flex; flex-wrap: wrap; gap: 6px"><span class="ok">4,8:1</span><span class="no">Білий — 2,0:1</span></span></div>
+<div class="tx"><span class="txs" style="background: #FFFFFF; color: #C8161C; font-size: 15px">Вкажіть ваше ім’я</span><span style="font-size: 14px; font-weight: 800">Помилка · #C8161C</span><span class="cap">Текст помилки, рамка поля з помилкою</span><span class="ok">5,9:1 на білому · 5,1:1 на #FDECEC</span></div>
+<div class="tx"><span class="txs" style="background: #FFFFFF"><span style="width: 150px; height: 36px; border-radius: 10px; border: 1.5px solid #8A8F93; background: #FBFBF9; box-sizing: border-box"></span></span><span style="font-size: 14px; font-weight: 800">Рамка поля · #8A8F93</span><span class="cap">Інпути, селекти, textarea · WCAG 1.4.11</span><span class="ok">3,3:1 на білому · 3,2:1 на #FBFBF9</span></div>
+<div class="tx"><span class="txs" style="background: #FBFBF9; color: #6B6F73; font-size: 15px; font-weight: 500">name@email.com</span><span style="font-size: 14px; font-weight: 800">Плейсхолдер · #6B6F73</span><span class="cap">Підказка всередині поля</span><span class="ok">4,9:1 на #FBFBF9</span></div>
+</div>
+</div>
+</section>
+
+<section aria-labelledby="sg-type" style="margin-top: 56px">
+<div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 16px 32px; padding: 0 8px 22px">
+<div style="display: flex; flex-direction: column; gap: 12px; max-width: 760px">
+<span class="eb">03 · Типографіка</span>
+<h2 id="sg-type" class="h2s">Один шрифт — Manrope, чотирнадцять ролей</h2>
+</div>
+<span style="max-width: 420px; font-size: 14.5px; line-height: 1.6; color: #5F6366">Розмір / міжрядковий / трекінг (px і em) · насиченість</span>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 16px">
+<div style="flex: 2 1 640px; min-width: 0; border-radius: 28px; background: #FFFFFF; padding: 12px clamp(24px, 3vw, 44px); display: flex; flex-direction: column; box-sizing: border-box">
+<div class="ty"><span class="tyl"><b>Display · H1 розділу</b><span>68 / 1.02 / −2.6 (−0.038em) · 800</span></span><span class="tys" style="font-size: clamp(36px, 4.7vw, 68px); line-height: 1.02; letter-spacing: -0.038em; font-weight: 800; text-wrap: balance">Вступ до школи</span></div>
+<div class="ty"><span class="tyl"><b>H1 статті</b><span>clamp(32px, 3.9vw, 56px) / 1.05 / −0.036em · 800</span></span><span class="tys" style="font-size: clamp(32px, 3.9vw, 56px); line-height: 1.05; letter-spacing: -0.036em; font-weight: 800; text-wrap: balance">Призові місця на чемпіонаті світу</span></div>
+<div class="ty"><span class="tyl"><b>H2</b><span>40 / 1.1 / −1.4 (−0.035em) · 800</span></span><span class="tys" style="font-size: 40px; line-height: 1.1; letter-spacing: -0.035em; font-weight: 800">Освітні програми</span></div>
+<div class="ty"><span class="tyl"><b>Головна новина</b><span>34 / 1.18 / −1 (−0.029em) · 800</span></span><span class="tys" style="font-size: 34px; line-height: 1.18; letter-spacing: -0.029em; font-weight: 800">Від Антарктики до шкільної аудиторії</span></div>
+<div class="ty"><span class="tyl"><b>H3</b><span>22 / 1.2 / −0.6 (−0.027em) · 800</span></span><span class="tys" style="font-size: 22px; line-height: 1.2; letter-spacing: -0.027em; font-weight: 800">Дошкільна підготовка (КДП)</span></div>
+<div class="ty"><span class="tyl"><b>Заголовок картки</b><span>19 / 1.3 / −0.4 (−0.021em) · 800</span></span><span class="tys" style="font-size: 19px; line-height: 1.3; letter-spacing: -0.021em; font-weight: 800">Новопечерська має таланти</span></div>
+<div class="ty"><span class="tyl"><b>Lead</b><span>18 / 1.6 · 400 · #54585C</span></span><span class="tys" style="font-size: 18px; line-height: 1.6; color: #54585C">Українська програма, канадський диплом у старшій школі, 37 гуртків і секцій.</span></div>
+<div class="ty"><span class="tyl"><b>Лід статті</b><span>21 / 1.55 · 500 · #54585C</span></span><span class="tys" style="font-size: 21px; line-height: 1.55; font-weight: 500; color: #54585C">Учениці представили Україну на чемпіонаті світу з мажорет-спорту.</span></div>
+<div class="ty"><span class="tyl"><b>Body</b><span>15.5 / 1.6 · 400 · #54585C</span></span><span class="tys" style="font-size: 15.5px; line-height: 1.6; color: #54585C">Дворічна програма: навчальні осередки, сенсорний куточок і півтори години англійської щодня.</span></div>
+<div class="ty"><span class="tyl"><b>Текст статті</b><span>18 / 1.75 · 400 · #22262A · max 68ch</span></span><span class="tys" style="max-width: 68ch; font-size: 18px; line-height: 1.75; color: #22262A">Понад половину тренувань дівчата провели в шкільному укритті під час повітряних тривог.</span></div>
+<div class="ty"><span class="tyl"><b>Цитата</b><span>27 / 1.4 · 700</span></span><span class="tys" style="font-size: 27px; line-height: 1.4; font-weight: 700; letter-spacing: -0.02em">«Пишаємося нашими ученицями!»</span></div>
+<div class="ty"><span class="tyl"><b>Label</b><span>12.5 · 800 · +1.4 (+0.112em) · caps</span></span><span class="tys" style="display: inline-flex; align-items: center; gap: 10px; font-size: 12.5px; font-weight: 800; letter-spacing: 0.112em; text-transform: uppercase; color: #5F6366"><span style="width: 26px; height: 2px; background: #8CC63F"></span>Освітні програми</span></div>
+<div class="ty"><span class="tyl"><b>Number · плитка</b><span>44 / 1 / −2 (−0.045em) · 800</span></span><span class="tys" style="font-size: 44px; line-height: 1; letter-spacing: -0.045em; font-weight: 800">9585&nbsp;м²</span></div>
+<div class="ty" style="border-bottom: 0"><span class="tyl"><b>Цифра статті</b><span>48 / 1 / −2 (−0.042em) · 800</span></span><span class="tys" style="font-size: 48px; line-height: 1; letter-spacing: -0.042em; font-weight: 800">1 та 3 місця</span></div>
+</div>
+<div style="flex: 1 1 360px; min-width: 0; display: flex; flex-direction: column; gap: 16px">
+<div style="flex: 1 1 auto; border-radius: 28px; background: #16181A; color: #FFFFFF; padding: clamp(28px, 3vw, 44px); display: flex; flex-direction: column; gap: 18px; box-sizing: border-box">
+<span style="font-size: 12.5px; font-weight: 800; letter-spacing: 1.4px; text-transform: uppercase; color: #9AA0A4">Manrope · Google Fonts</span>
+<span aria-hidden="true" style="font-size: 160px; line-height: 0.9; font-weight: 800; letter-spacing: -8px; color: #8CC63F">Аа</span>
+<div style="display: flex; flex-direction: column; gap: 6px; font-size: 20px; letter-spacing: -0.3px">
+<span style="font-weight: 400">400 · Regular</span>
+<span style="font-weight: 500">500 · Medium</span>
+<span style="font-weight: 600">600 · SemiBold</span>
+<span style="font-weight: 700">700 · Bold</span>
+<span style="font-weight: 800">800 · ExtraBold</span>
+</div>
+<span style="font-size: 15px; line-height: 1.6; color: #C9CDD1; overflow-wrap: anywhere">АБВГҐДЕЄЖЗИІЇЙКЛМНОПРСТУФХЦЧШЩЬЮЯ абвгґдеєжзиіїйклмнопрстуфхцчшщьюя 0123456789 ₴ $ № « » — ’</span>
+<span style="margin-top: auto; font-size: 13.5px; line-height: 1.6; color: #9AA0A4">Повна кирилиця. У розкладах і цінах — табличні цифри (tabular-nums), щоб час і суми стояли рівно.</span>
+</div>
+<div style="border-radius: 28px; background: #FFFFFF; padding: 28px 32px; display: flex; flex-direction: column; box-sizing: border-box">
+<h3 style="margin: 0 0 6px; font-size: 21px; line-height: 1.25; font-weight: 800; letter-spacing: -0.5px">Формати</h3>
+<div class="fm"><b>Телефон</b><span><span class="nw">+38 (050) 373-39-73</span> · <span class="nw">tel:+380503733973</span></span></div>
+<div class="fm"><b>Дата</b><span>ДД.ММ.РРРР — 09.10.2026 · у розмітці &lt;time datetime="2026-10-09"&gt;</span></div>
+<div class="fm"><b>Час</b><span>8:30–18:00 — середнє тире без пробілів</span></div>
+<div class="fm"><b>Навчальний рік</b><span>2026/2027</span></div>
+<div class="fm"><b>Ціна</b><span><span class="nw">$13 750</span> на рік · <span class="nw">$650</span> за семестр</span></div>
+<div class="fm" style="border-bottom: 0"><b>Адреса</b><span>01103, Київ, вул. Андрія Верхогляда, 9-Б</span></div>
+</div>
+</div>
+</div>
+</section>
+
+<section aria-labelledby="sg-grid" style="margin-top: 56px">
+<div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 16px 32px; padding: 0 8px 22px">
+<div style="display: flex; flex-direction: column; gap: 12px; max-width: 760px">
+<span class="eb">04 · Сітка і форма</span>
+<h2 id="sg-grid" class="h2s">Бенто-ряди, що перебудовуються від 1440 до 390</h2>
+</div>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 16px">
+<div style="flex: 1.4 1 560px; min-width: 0; border-radius: 28px; background: #FFFFFF; padding: 32px; display: flex; flex-direction: column; gap: 18px; box-sizing: border-box">
+<h3 style="margin: 0; font-size: 21px; line-height: 1.25; font-weight: 800; letter-spacing: -0.5px">Контейнер і відступи</h3>
+<div style="display: flex; align-items: center; gap: 10px; font-size: 12.5px; font-weight: 700; color: #5F6366"><span style="flex: 1 1 auto; height: 1px; background: #C9CDD1"></span>max-width 1440 px<span style="flex: 1 1 auto; height: 1px; background: #C9CDD1"></span></div>
+<div style="border-radius: 18px; background: #EFEAFA; padding: 16px 22px; box-sizing: border-box">
+<div style="display: flex; gap: 10px; height: 170px">
+<div style="flex: 1.6 1 0px; border-radius: 14px; background-color: #2B3034; background-image: repeating-linear-gradient(135deg, rgba(255,255,255,0.045) 0 1px, transparent 1px 14px)"></div>
+<div style="flex: 1 1 0px; display: flex; flex-direction: column; gap: 10px"><div style="flex: 1 1 0px; border-radius: 14px; background: #8CC63F"></div><div style="flex: 1 1 0px; border-radius: 14px; background: #FFFFFF"></div></div>
+<div style="flex: 1 1 0px; border-radius: 14px; background: #5B3FA8"></div>
+</div>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 8px">
+<span style="display: inline-flex; align-items: center; gap: 8px; padding: 7px 12px; border-radius: 999px; background: #F1F2EE; font-size: 13px; font-weight: 700; color: #3A3E42"><span style="width: 12px; height: 12px; border-radius: 3px; background: #EFEAFA; border: 1px solid #C9BDEB"></span>Поля 28 px · 16 px на телефоні</span>
+<span style="padding: 7px 12px; border-radius: 999px; background: #F1F2EE; font-size: 13px; font-weight: 700; color: #3A3E42">Gap між плитками 16 px</span>
+<span style="padding: 7px 12px; border-radius: 999px; background: #F1F2EE; font-size: 13px; font-weight: 700; color: #3A3E42">Між секціями 56 px</span>
+<span style="padding: 7px 12px; border-radius: 999px; background: #F1F2EE; font-size: 13px; font-weight: 700; color: #3A3E42">Ряди — flex-wrap, сітки — auto-fit</span>
+</div>
+</div>
+<div style="flex: 1 1 380px; min-width: 0; border-radius: 28px; background: #FFFFFF; padding: 32px; display: flex; flex-direction: column; gap: 22px; box-sizing: border-box">
+<h3 style="margin: 0; font-size: 21px; line-height: 1.25; font-weight: 800; letter-spacing: -0.5px">Радіуси</h3>
+<div style="display: flex; flex-wrap: wrap; align-items: flex-end; gap: 22px 26px">
+<div style="display: flex; flex-direction: column; gap: 10px"><span style="width: 88px; height: 88px; border-radius: 28px; background: #F1F2EE; border: 2px solid #16181A; box-sizing: border-box"></span><span style="font-size: 13px; font-weight: 700; color: #3A3E42">28 · плитка</span></div>
+<div style="display: flex; flex-direction: column; gap: 10px"><span style="width: 88px; height: 88px; border-radius: 20px; background: #F1F2EE; border: 2px solid #16181A; box-sizing: border-box"></span><span style="font-size: 13px; font-weight: 700; color: #3A3E42">20 · фото в картці</span></div>
+<div style="display: flex; flex-direction: column; gap: 10px"><span style="width: 88px; height: 88px; border-radius: 14px; background: #F1F2EE; border: 2px solid #16181A; box-sizing: border-box"></span><span style="font-size: 13px; font-weight: 700; color: #3A3E42">14 · іконка-чип</span></div>
+<div style="display: flex; flex-direction: column; gap: 10px"><span style="width: 130px; height: 52px; border-radius: 999px; background: #F1F2EE; border: 2px solid #16181A; box-sizing: border-box"></span><span style="font-size: 13px; font-weight: 700; color: #3A3E42">999 · кнопки й чипи</span></div>
+</div>
+<p style="margin: 0; font-size: 14.5px; line-height: 1.6; color: #54585C">Вкладені елементи мають менший радіус за батьківську плитку — так кути «звучать» концентрично.</p>
+</div>
+<div style="flex: 1 1 520px; min-width: 0; border-radius: 28px; background: #FFFFFF; padding: 32px; display: flex; flex-direction: column; gap: 16px; box-sizing: border-box">
+<h3 style="margin: 0; font-size: 21px; line-height: 1.25; font-weight: 800; letter-spacing: -0.5px">Брейкпоінти</h3>
+<div style="display: flex; flex-direction: column; gap: 6px">
+<div style="width: 100%; height: 40px; border-radius: 12px; background: #16181A; color: #FFFFFF; display: flex; align-items: center; padding: 0 14px; font-size: 13px; font-weight: 800; box-sizing: border-box">1440</div>
+<span style="font-size: 13.5px; line-height: 1.5; color: #5F6366">Десктоп: бенто-ряди з 2–4 плиток, усі розділи в хедері</span>
+</div>
+<div style="display: flex; flex-direction: column; gap: 6px">
+<div style="width: 71%; height: 40px; border-radius: 12px; background: #5B3FA8; color: #FFFFFF; display: flex; align-items: center; padding: 0 14px; font-size: 13px; font-weight: 800; box-sizing: border-box">1024</div>
+<span style="font-size: 13.5px; line-height: 1.5; color: #5F6366">Ноутбук: широкі плитки лишаються, вузькі переносяться в новий ряд; у хедері — бургер</span>
+</div>
+<div style="display: flex; flex-direction: column; gap: 6px">
+<div style="width: 53%; height: 40px; border-radius: 12px; background: #8CC63F; color: #16181A; display: flex; align-items: center; padding: 0 14px; font-size: 13px; font-weight: 800; box-sizing: border-box">768</div>
+<span style="font-size: 13.5px; line-height: 1.5; color: #5F6366">Планшет: дві колонки, герой і заклики — на всю ширину</span>
+</div>
+<div style="display: flex; flex-direction: column; gap: 6px">
+<div style="width: 27%; min-width: 72px; height: 40px; border-radius: 12px; background: #D5D8D2; color: #16181A; display: flex; align-items: center; padding: 0 14px; font-size: 13px; font-weight: 800; box-sizing: border-box">390</div>
+<span style="font-size: 13.5px; line-height: 1.5; color: #5F6366">Телефон: одна колонка, програми — горизонтальний скрол, липка панель «Записатися на екскурсію» + дзвінок</span>
+</div>
+<div style="display: flex; flex-direction: column; gap: 8px; padding-top: 14px; border-top: 1px solid #EDEEEA">
+<span style="font-size: 14px; font-weight: 800">Хедер</span>
+<span style="display: flex; gap: 12px; font-size: 13.5px; line-height: 1.5; color: #3A3E42"><b style="flex: none; min-width: 78px">≥1100</b><span>Повна навігація, мова, пошук, «Кабінет» ↗</span></span>
+<span style="display: flex; gap: 12px; font-size: 13.5px; line-height: 1.5; color: #3A3E42"><b style="flex: none; min-width: 78px">600–1099</b><span>Логотип + «Кабінет» + бургер; меню відкривається на весь екран</span></span>
+<span style="display: flex; gap: 12px; font-size: 13.5px; line-height: 1.5; color: #3A3E42"><b style="flex: none; min-width: 78px">&lt;600</b><span>Компактна пілюля 56 px, top 12 px</span></span>
+</div>
+</div>
+<div style="flex: 1.4 1 560px; min-width: 0; border-radius: 28px; background: #FFFFFF; padding: 32px; display: flex; flex-direction: column; gap: 18px; box-sizing: border-box">
+<h3 style="margin: 0; font-size: 21px; line-height: 1.25; font-weight: 800; letter-spacing: -0.5px">Анатомія плитки</h3>
+<div style="display: flex; flex-wrap: wrap; gap: 20px 28px; align-items: center">
+<div style="flex: 1 1 300px; min-width: 0; border-radius: 22px; background: #F1F2EE; padding: 24px; box-sizing: border-box">
+<div style="position: relative; border-radius: 28px; background: #FFFFFF; padding: 34px; display: flex; flex-direction: column; gap: 12px; min-height: 250px; box-sizing: border-box; outline: 1.5px dashed #B9A8E6; outline-offset: -18px">
+<span class="nb" style="position: absolute; top: 6px; left: 6px">5</span>
+<span style="display: flex; justify-content: space-between; align-items: flex-start; gap: 12px">
+<span style="display: inline-flex; align-items: center; gap: 8px"><span class="nb">1</span><span style="font-size: 12.5px; font-weight: 800; letter-spacing: 1.4px; text-transform: uppercase; color: #5F6366">Наш формат</span></span>
+<span style="display: inline-flex; align-items: center; gap: 8px"><span class="nb">4</span><span style="width: 44px; height: 44px; border-radius: 50%; background: #F1F2EE; color: #16181A; display: flex; align-items: center; justify-content: center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></span></span>
+</span>
+<span style="margin-top: auto; display: flex; align-items: flex-start; gap: 8px"><span class="nb">2</span><span style="font-size: 22px; line-height: 1.2; font-weight: 800; letter-spacing: -0.6px">Українське свідоцтво і канадський диплом</span></span>
+<span style="display: flex; align-items: flex-start; gap: 8px"><span class="nb">3</span><span style="font-size: 14.5px; line-height: 1.55; color: #54585C">8–11 класи · 10 додаткових предметів англійською</span></span>
+</div>
+</div>
+<ol style="flex: 1 1 220px; margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 12px">
+<li style="display: flex; gap: 12px; font-size: 14.5px; line-height: 1.5"><span class="nb">1</span><span><b>Мітка</b> — 12.5 / 800 / caps, колір Muted</span></li>
+<li style="display: flex; gap: 12px; font-size: 14.5px; line-height: 1.5"><span class="nb">2</span><span><b>Заголовок</b> — H3 22 (картка — 19), у великих плитках H2; завжди тег h3</span></li>
+<li style="display: flex; gap: 12px; font-size: 14.5px; line-height: 1.5"><span class="nb">3</span><span><b>Текст</b> — Body 15.5, до трьох рядків</span></li>
+<li style="display: flex; gap: 12px; font-size: 14.5px; line-height: 1.5"><span class="nb">4</span><span><b>Стрілка 44 × 44</b> — уся плитка є посиланням</span></li>
+<li style="display: flex; gap: 12px; font-size: 14.5px; line-height: 1.5"><span class="nb">5</span><span><b>Відступ 32–52 px</b>, радіус 28 px</span></li>
+</ol>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 12px 22px; padding-top: 16px; border-top: 1px solid #EDEEEA">
+<span style="display: inline-flex; align-items: center; gap: 10px; font-size: 13.5px; font-weight: 600; color: #3A3E42"><span style="width: 36px; height: 36px; border-radius: 50%; background: #F1F2EE; display: flex; align-items: center; justify-content: center"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></span>Внутрішнє посилання</span>
+<span style="display: inline-flex; align-items: center; gap: 10px; font-size: 13.5px; font-weight: 600; color: #3A3E42"><span style="width: 36px; height: 36px; border-radius: 50%; background: #F1F2EE; display: flex; align-items: center; justify-content: center"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></span>Зовнішнє — нова вкладка</span>
+<span style="display: inline-flex; align-items: center; gap: 10px; font-size: 13.5px; font-weight: 600; color: #3A3E42"><span style="width: 36px; height: 36px; border-radius: 50%; background: #F1F2EE; display: flex; align-items: center; justify-content: center"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14"></path><path d="m19 12-7 7-7-7"></path></svg></span>Якір на сторінці</span>
+<span style="flex: 1 1 100%; font-size: 13.5px; line-height: 1.55; color: #5F6366">Статичні плитки — без стрілки й без ефекту наведення. Зовнішні посилання: target="_blank", rel="noopener" і прихований текст «(відкриється в новій вкладці)».</span>
+</div>
+</div>
+</div>
+</section>
+
+<section aria-labelledby="sg-components" style="margin-top: 56px">
+<div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 16px 32px; padding: 0 8px 22px">
+<div style="display: flex; flex-direction: column; gap: 12px; max-width: 760px">
+<span class="eb">05 · Компоненти</span>
+<h2 id="sg-components" class="h2s">Бібліотека: від кнопки до картки новини</h2>
+</div>
+</div>
+
+<div style="border-radius: 28px; background: #FFFFFF; padding: 32px; display: flex; flex-direction: column; gap: 20px; box-sizing: border-box">
+<div style="display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 8px 24px"><h3 style="margin: 0; font-size: 21px; line-height: 1.25; font-weight: 800; letter-spacing: -0.5px">Кнопки · п’ять станів</h3><span style="font-size: 13.5px; color: #5F6366">Висота 44–52 px · радіус 999 · 14–15 px / 700 · підпис під кожним зразком</span></div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(560px, 100%), 1fr)); gap: 12px">
+<div style="border-radius: 20px; background: #F1F2EE; padding: 20px; display: flex; flex-direction: column; gap: 14px">
+<span style="font-size: 13px; font-weight: 800">Основна · «Кабінет», головні дії</span>
+<div style="display: flex; flex-wrap: wrap; gap: 16px 12px">
+<span class="st"><button class="b" type="button" style="background: #5B3FA8; color: #FFFFFF">Кабінет</button><span class="cap">Звичайна</span></span>
+<span class="st"><button class="b" type="button" style="background: #4A3190; color: #FFFFFF">Кабінет</button><span class="cap">Наведення</span></span>
+<span class="st"><button class="b fr" type="button" style="background: #5B3FA8; color: #FFFFFF">Кабінет</button><span class="cap">Фокус</span></span>
+<span class="st"><button class="b" type="button" style="background: #4A3190; color: #FFFFFF; transform: scale(0.96)">Кабінет</button><span class="cap">Натиснута</span></span>
+<span class="st"><button class="b" type="button" aria-disabled="true" style="background: #E4E6E1; color: #8A8F93; cursor: not-allowed">Кабінет</button><span class="cap">Неактивна</span></span>
+</div>
+</div>
+<div style="border-radius: 20px; background: #F1F2EE; padding: 20px; display: flex; flex-direction: column; gap: 14px">
+<span style="font-size: 13px; font-weight: 800">Дія · анкета, екскурсія (завжди зелена)</span>
+<div style="display: flex; flex-wrap: wrap; gap: 16px 12px">
+<span class="st"><button class="b" type="button" style="background: #8CC63F; color: #16181A">Заповнити анкету</button><span class="cap">Звичайна</span></span>
+<span class="st"><button class="b" type="button" style="background: #7CB733; color: #16181A">Заповнити анкету</button><span class="cap">Наведення</span></span>
+<span class="st"><button class="b fr" type="button" style="background: #8CC63F; color: #16181A">Заповнити анкету</button><span class="cap">Фокус</span></span>
+<span class="st"><button class="b" type="button" style="background: #7CB733; color: #16181A; transform: scale(0.96)">Заповнити анкету</button><span class="cap">Натиснута</span></span>
+<span class="st"><button class="b" type="button" aria-disabled="true" style="background: #E4E6E1; color: #8A8F93; cursor: not-allowed">Заповнити анкету</button><span class="cap">Неактивна</span></span>
+</div>
+</div>
+<div style="border-radius: 20px; background-color: #2B3034; background-image: repeating-linear-gradient(135deg, rgba(255,255,255,0.045) 0 1px, transparent 1px 14px); padding: 20px; display: flex; flex-direction: column; gap: 14px">
+<span style="font-size: 13px; font-weight: 800; color: #FFFFFF">На фото · герой</span>
+<div style="display: flex; flex-wrap: wrap; gap: 16px 12px">
+<span class="st"><button class="b" type="button" style="background: #FFFFFF; color: #16181A">Умови вступу</button><span class="cap" style="color: #C9CDD1">Звичайна</span></span>
+<span class="st"><button class="b" type="button" style="background: #8CC63F; color: #16181A">Умови вступу</button><span class="cap" style="color: #C9CDD1">Наведення</span></span>
+<span class="st"><button class="b fr" type="button" style="background: #FFFFFF; color: #16181A">Умови вступу</button><span class="cap" style="color: #C9CDD1">Фокус</span></span>
+<span class="st"><button class="b" type="button" style="background: #8CC63F; color: #16181A; transform: scale(0.96)">Умови вступу</button><span class="cap" style="color: #C9CDD1">Натиснута</span></span>
+<span class="st"><button class="b" type="button" aria-disabled="true" style="background: rgba(255,255,255,0.3); color: rgba(255,255,255,0.75); cursor: not-allowed">Умови вступу</button><span class="cap" style="color: #C9CDD1">Неактивна</span></span>
+</div>
+</div>
+<div style="border-radius: 20px; background: #16181A; padding: 20px; display: flex; flex-direction: column; gap: 14px">
+<span style="font-size: 13px; font-weight: 800; color: #FFFFFF">Контурна · на темному</span>
+<div style="display: flex; flex-wrap: wrap; gap: 16px 12px">
+<span class="st"><button class="b" type="button" style="border: 1.5px solid rgba(255,255,255,0.5); background: transparent; color: #FFFFFF">Telegram</button><span class="cap" style="color: #C9CDD1">Звичайна</span></span>
+<span class="st"><button class="b" type="button" style="border: 1.5px solid #FFFFFF; background: transparent; color: #FFFFFF">Telegram</button><span class="cap" style="color: #C9CDD1">Наведення</span></span>
+<span class="st"><button class="b fr" type="button" style="border: 1.5px solid rgba(255,255,255,0.5); background: transparent; color: #FFFFFF">Telegram</button><span class="cap" style="color: #C9CDD1">Фокус</span></span>
+<span class="st"><button class="b" type="button" style="border: 1.5px solid #FFFFFF; background: rgba(255,255,255,0.08); color: #FFFFFF; transform: scale(0.96)">Telegram</button><span class="cap" style="color: #C9CDD1">Натиснута</span></span>
+<span class="st"><button class="b" type="button" aria-disabled="true" style="border: 1.5px solid rgba(255,255,255,0.2); background: transparent; color: rgba(255,255,255,0.45); cursor: not-allowed">Telegram</button><span class="cap" style="color: #C9CDD1">Неактивна</span></span>
+</div>
+</div>
+<div style="border-radius: 20px; background: #F1F2EE; padding: 20px; display: flex; flex-direction: column; gap: 14px">
+<span style="font-size: 13px; font-weight: 800">Світла зі стрілкою · «Усі програми»</span>
+<div style="display: flex; flex-wrap: wrap; gap: 16px 12px">
+<span class="st"><button class="b" type="button" style="min-height: 44px; font-size: 14px; background: #FFFFFF; color: #16181A">Усі програми<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></button><span class="cap">Звичайна</span></span>
+<span class="st"><button class="b" type="button" style="min-height: 44px; font-size: 14px; background: #16181A; color: #FFFFFF">Усі програми<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></button><span class="cap">Наведення</span></span>
+<span class="st"><button class="b fr" type="button" style="min-height: 44px; font-size: 14px; background: #FFFFFF; color: #16181A">Усі програми<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></button><span class="cap">Фокус</span></span>
+<span class="st"><button class="b" type="button" style="min-height: 44px; font-size: 14px; background: #16181A; color: #FFFFFF; transform: scale(0.96)">Усі програми<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></button><span class="cap">Натиснута</span></span>
+<span class="st"><button class="b" type="button" aria-disabled="true" style="min-height: 44px; font-size: 14px; background: #E4E6E1; color: #8A8F93; cursor: not-allowed">Усі програми<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></button><span class="cap">Неактивна</span></span>
+</div>
+</div>
+<div style="border-radius: 20px; background: #FFFFFF; border: 1px solid #EDEEEA; padding: 20px; display: flex; flex-direction: column; gap: 14px">
+<span style="font-size: 13px; font-weight: 800">Іконка 44 × 44 · пошук, меню, стрілка</span>
+<div style="display: flex; flex-wrap: wrap; gap: 16px 18px">
+<span class="st" style="align-items: center"><button type="button" aria-label="Пошук — звичайний стан" style="width: 44px; height: 44px; border-radius: 50%; border: 0; background: #F1F2EE; color: #16181A; display: flex; align-items: center; justify-content: center; cursor: pointer"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg></button><span class="cap">Звичайна</span></span>
+<span class="st" style="align-items: center"><button type="button" aria-label="Пошук — наведення" style="width: 44px; height: 44px; border-radius: 50%; border: 0; background: #E4E6E1; color: #16181A; display: flex; align-items: center; justify-content: center; cursor: pointer"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg></button><span class="cap">Наведення</span></span>
+<span class="st" style="align-items: center"><button class="fr" type="button" aria-label="Пошук — фокус" style="width: 44px; height: 44px; border-radius: 50%; border: 0; background: #F1F2EE; color: #16181A; display: flex; align-items: center; justify-content: center; cursor: pointer"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg></button><span class="cap">Фокус</span></span>
+<span class="st" style="align-items: center"><button type="button" aria-label="Стрілка плитки — натиснута" style="width: 44px; height: 44px; border-radius: 50%; border: 0; background: #16181A; color: #FFFFFF; display: flex; align-items: center; justify-content: center; cursor: pointer; transform: scale(0.94)"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></button><span class="cap">Натиснута</span></span>
+<span class="st" style="align-items: center"><button type="button" aria-disabled="true" aria-label="Меню — неактивна" style="width: 44px; height: 44px; border-radius: 50%; border: 0; background: #F1F2EE; color: #A9ADB0; display: flex; align-items: center; justify-content: center; cursor: not-allowed"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg></button><span class="cap">Неактивна</span></span>
+</div>
+</div>
+</div>
+</div>
+
+<div style="margin-top: 16px; border-radius: 28px; background: #FFFFFF; padding: 32px; display: flex; flex-direction: column; gap: 18px; box-sizing: border-box">
+<div style="display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 8px 24px"><h3 style="margin: 0; font-size: 21px; line-height: 1.25; font-weight: 800; letter-spacing: -0.5px">Фокус · двоколірне кільце на будь-якому тлі</h3><code style="padding: 6px 10px; border-radius: 10px; background: #F1F2EE; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 12.5px; color: #3A3E42">outline: 3px solid #5B3FA8; outline-offset: 2px; box-shadow: 0 0 0 2px #FFFFFF</code></div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr)); gap: 12px">
+<div style="border-radius: 20px; background: #F1F2EE; padding: 24px; display: flex; flex-direction: column; align-items: flex-start; gap: 16px"><button class="b fr" type="button" style="background: #5B3FA8; color: #FFFFFF">Кабінет</button><span style="font-size: 13.5px; line-height: 1.5; font-weight: 600; color: #3A3E42"><b>Світле тло.</b> Фіолетове кільце — 7,7:1 на білому, 6,9:1 на фоні</span></div>
+<div style="border-radius: 20px; background: #16181A; padding: 24px; display: flex; flex-direction: column; align-items: flex-start; gap: 16px"><button class="b fr" type="button" style="background: #8CC63F; color: #16181A">Заповнити анкету</button><span style="font-size: 13.5px; line-height: 1.5; font-weight: 600; color: #C9CDD1"><b style="color: #FFFFFF">Ink.</b> Біле внутрішнє кільце — 17,8:1 (фіолетове саме по собі — лише 2,3:1)</span></div>
+<div style="border-radius: 20px; background: #5B3FA8; padding: 24px; display: flex; flex-direction: column; align-items: flex-start; gap: 16px"><button class="b fr" type="button" style="background: #FFFFFF; color: #16181A">Про програму U-CAN</button><span style="font-size: 13.5px; line-height: 1.5; font-weight: 600; color: rgba(255,255,255,0.9)"><b style="color: #FFFFFF">Фіолетове тло.</b> Біле кільце — 7,7:1 (фіолетове зливається, 1:1)</span></div>
+<div style="border-radius: 20px; background: #8CC63F; padding: 24px; display: flex; flex-direction: column; align-items: flex-start; gap: 16px"><button class="b fr" type="button" style="background: #FFFFFF; color: #16181A">Записатися</button><span style="font-size: 13.5px; line-height: 1.5; font-weight: 600; color: #16181A"><b>Зелене тло.</b> Фіолетове кільце — 3,8:1 (біле — лише 2,0:1)</span></div>
+</div>
+</div>
+
+<div style="margin-top: 16px; display: flex; flex-wrap: wrap; gap: 16px">
+<div style="flex: 1 1 520px; min-width: 0; border-radius: 28px; background: #FFFFFF; padding: 32px; display: flex; flex-direction: column; gap: 20px; box-sizing: border-box">
+<h3 style="margin: 0; font-size: 21px; line-height: 1.25; font-weight: 800; letter-spacing: -0.5px">Чипи, мітки, вкладки</h3>
+<div style="display: flex; flex-direction: column; gap: 10px">
+<span class="lbl">Інформаційні · не клікабельні</span>
+<div style="display: flex; flex-wrap: wrap; gap: 6px"><span style="padding: 5px 11px; border-radius: 999px; background: #F1F2EE; font-size: 12.5px; font-weight: 700; color: #3A3E42">КДП-4 · КДП-5</span><span style="padding: 5px 11px; border-radius: 999px; background: #F1F2EE; font-size: 12.5px; font-weight: 700; color: #3A3E42">з 4 років</span><span style="padding: 5px 11px; border-radius: 999px; background: #F1F2EE; font-size: 12.5px; font-weight: 700; color: #3A3E42">9:00–18:00</span></div>
+<span class="cap">Без рамки й без мінімальної висоти — не схожі на кнопки</span>
+</div>
+<div style="display: flex; flex-direction: column; gap: 10px">
+<span class="lbl">Якорі на сторінці · клікабельні</span>
+<div style="display: flex; flex-wrap: wrap; gap: 8px">
+<a class="bl ach" href="#sg-type">Типографіка<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14"></path><path d="m19 12-7 7-7-7"></path></svg></a>
+<a class="bl ach" href="#sg-icons">Іконки<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14"></path><path d="m19 12-7 7-7-7"></path></svg></a>
+</div>
+<span class="cap">Біла заливка, рамка #E3E5E0, 44 px, стрілка ↓</span>
+</div>
+<div style="display: flex; flex-direction: column; gap: 10px">
+<span class="lbl">Рубрики новин</span>
+<div style="display: flex; flex-wrap: wrap; gap: 6px"><span style="padding: 5px 11px; border-radius: 999px; background: #FDECEC; font-size: 12.5px; font-weight: 800; color: #C8161C">Події</span><span style="padding: 5px 11px; border-radius: 999px; background: #F3F6EE; font-size: 12.5px; font-weight: 800; color: #4E7A1F">Навчання</span><span style="padding: 5px 11px; border-radius: 999px; background: #EFEAFA; font-size: 12.5px; font-weight: 800; color: #5B3FA8">Спорт</span><span style="padding: 5px 11px; border-radius: 999px; background: #F3EEE4; font-size: 12.5px; font-weight: 800; color: #6E5A2E">Творчість</span><span style="padding: 5px 11px; border-radius: 999px; background: #F1F2EE; font-size: 12.5px; font-weight: 800; color: #3A3E42">Випускники</span><span style="padding: 5px 11px; border-radius: 999px; background: #F1F2EE; font-size: 12.5px; font-weight: 800; color: #3A3E42">Табір</span></div>
+<span class="cap">Контраст 5,1 · 4,7 · 6,6 · 5,7 · 9,6 · 9,6 : 1 — усі AA. Колір лише підсилює назву рубрики. Суцільна заливка #16181A — лише для активного фільтра чи вкладки.</span>
+</div>
+<div style="display: flex; flex-direction: column; gap: 10px">
+<span class="lbl">Фільтри · aria-pressed</span>
+<div style="display: flex; flex-wrap: wrap; gap: 8px">
+<button type="button" aria-pressed="true" style="min-height: 44px; padding: 0 18px; border-radius: 999px; border: 1.5px solid #16181A; background: #16181A; color: #FFFFFF; font-family: inherit; font-size: 14px; font-weight: 700; cursor: pointer">Усі</button>
+<button type="button" aria-pressed="false" style="min-height: 44px; padding: 0 18px; border-radius: 999px; border: 1.5px solid #E3E5E0; background: #FFFFFF; color: #3A3E42; font-family: inherit; font-size: 14px; font-weight: 700; cursor: pointer">Події</button>
+<button type="button" aria-pressed="false" style="min-height: 44px; padding: 0 18px; border-radius: 999px; border: 1.5px solid #16181A; background: #FFFFFF; color: #16181A; font-family: inherit; font-size: 14px; font-weight: 700; cursor: pointer">Навчання</button>
+<button type="button" aria-pressed="false" style="min-height: 44px; padding: 0 18px; border-radius: 999px; border: 1.5px solid #E3E5E0; background: #FFFFFF; color: #3A3E42; font-family: inherit; font-size: 14px; font-weight: 700; cursor: pointer">Спорт</button>
+</div>
+<span class="cap">«Усі» — натиснута · «Навчання» — наведення (рамка Ink) · решта — звичайні</span>
+</div>
+<div style="display: flex; flex-direction: column; gap: 10px">
+<span class="lbl">Вкладки · розклад дня</span>
+<div class="tabs" style="display: flex; flex-wrap: wrap; gap: 8px">
+<button type="button" aria-pressed="false" style="min-height: 44px; padding: 0 20px; border-radius: 999px; border: 1.5px solid #E3E5E0; background: #FFFFFF; color: #3A3E42; font-family: inherit; font-size: 14.5px; font-weight: 700; cursor: pointer">КДП · 4–5 років</button>
+<button type="button" aria-pressed="true" style="min-height: 44px; padding: 0 20px; border-radius: 999px; border: 1.5px solid #16181A; background: #16181A; color: #FFFFFF; font-family: inherit; font-size: 14.5px; font-weight: 700; cursor: pointer">1–4 класи</button>
+<button type="button" aria-pressed="false" style="min-height: 44px; padding: 0 20px; border-radius: 999px; border: 1.5px solid #E3E5E0; background: #FFFFFF; color: #3A3E42; font-family: inherit; font-size: 14.5px; font-weight: 700; cursor: pointer">5–11 класи</button>
+</div>
+<span class="cap">Фільтр — кнопки з aria-pressed; вкладки з панелями — role="tablist"/"tab" + aria-selected + aria-controls. На телефоні — один ряд із горизонтальним скролом.</span>
+</div>
+<div style="display: flex; flex-direction: column; gap: 10px">
+<span class="lbl">Мітка розділу</span>
+<span class="eb">Освітні програми</span>
+</div>
+</div>
+
+<div style="flex: 1 1 520px; min-width: 0; border-radius: 28px; background: #FFFFFF; padding: 32px; display: flex; flex-direction: column; gap: 18px; box-sizing: border-box">
+<h3 style="margin: 0; font-size: 21px; line-height: 1.25; font-weight: 800; letter-spacing: -0.5px">Поля форми</h3>
+<span class="cap" style="margin-top: -8px">Рамка #8A8F93 (3,3:1) · фон #FBFBF9 · поля з * обов’язкові · помилка — рамка, іконка й текст #C8161C під полем</span>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr)); gap: 16px">
+<label style="display: flex; flex-direction: column; gap: 9px">
+<span style="font-size: 12.5px; font-weight: 800; letter-spacing: 1.2px; text-transform: uppercase; color: #5F6366">Ім’я *</span>
+<input type="text" placeholder="Ваше ім’я та прізвище" style="padding: 15px 18px; border-radius: 16px; border: 1.5px solid #8A8F93; background: #FBFBF9; font-family: inherit; font-size: 15.5px; color: #16181A; outline: none; box-sizing: border-box; width: 100%">
+<span class="cap">Звичайна</span>
+</label>
+<label style="display: flex; flex-direction: column; gap: 9px">
+<span style="font-size: 12.5px; font-weight: 800; letter-spacing: 1.2px; text-transform: uppercase; color: #5B3FA8">Телефон</span>
+<input class="fr" type="tel" placeholder="+38 (0__) ___-__-__" style="padding: 15px 18px; border-radius: 16px; border: 1.5px solid #5B3FA8; background: #FFFFFF; font-family: inherit; font-size: 15.5px; color: #16181A; box-sizing: border-box; width: 100%">
+<span class="cap">Фокус</span>
+</label>
+</div>
+<div style="display: flex; flex-direction: column; gap: 9px">
+<label for="sg-err" style="font-size: 12.5px; font-weight: 800; letter-spacing: 1.2px; text-transform: uppercase; color: #C8161C">E-mail *</label>
+<input id="sg-err" type="email" value="name@" aria-invalid="true" aria-describedby="sg-err-msg" style="padding: 15px 18px; border-radius: 16px; border: 1.5px solid #C8161C; background: #FFFFFF; font-family: inherit; font-size: 15.5px; color: #16181A; outline: none; box-sizing: border-box; width: 100%">
+<span id="sg-err-msg" style="display: flex; align-items: center; gap: 8px; font-size: 13.5px; font-weight: 600; color: #C8161C"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><line x1="12" x2="12" y1="8" y2="12"></line><line x1="12" x2="12.01" y1="16" y2="16"></line></svg>Вкажіть e-mail у форматі name@example.com</span>
+<span class="cap">Помилка · aria-invalid + aria-describedby; після «Надіслати» фокус переходить на перше поле з помилкою</span>
+</div>
+<label style="display: flex; flex-direction: column; gap: 9px">
+<span style="font-size: 12.5px; font-weight: 800; letter-spacing: 1.2px; text-transform: uppercase; color: #5F6366">Категорія повідомлення</span>
+<span style="position: relative; display: block">
+<select style="width: 100%; padding: 15px 48px 15px 18px; border-radius: 16px; border: 1.5px solid #8A8F93; background: #FBFBF9; font-family: inherit; font-size: 15.5px; font-weight: 600; color: #16181A; appearance: none; cursor: pointer; box-sizing: border-box">
+<option>Загальні питання</option>
+<option>Вступ</option>
+<option>Гуртки</option>
+</select>
+<span aria-hidden="true" style="position: absolute; right: 18px; top: 50%; transform: translateY(-50%); color: #5F6366; pointer-events: none; display: flex"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg></span>
+</span>
+</label>
+<label style="display: flex; flex-direction: column; gap: 9px">
+<span style="font-size: 12.5px; font-weight: 800; letter-spacing: 1.2px; text-transform: uppercase; color: #5F6366">Повідомлення *</span>
+<textarea rows="3" placeholder="Опишіть ваше запитання" style="padding: 15px 18px; border-radius: 16px; border: 1.5px solid #8A8F93; background: #FBFBF9; font-family: inherit; font-size: 15.5px; line-height: 1.6; color: #16181A; resize: vertical; box-sizing: border-box; width: 100%"></textarea>
+</label>
+<div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 14px 24px">
+<span style="max-width: 320px; font-size: 13.5px; line-height: 1.55; color: #5F6366">Натискаючи «Надіслати», ви погоджуєтеся на обробку персональних даних відповідно до Політики конфіденційності [посилання].</span>
+<button type="button" style="display: inline-flex; align-items: center; min-height: 52px; padding: 0 30px; border: 0; border-radius: 999px; background: #16181A; color: #FFFFFF; font-family: inherit; font-size: 15px; font-weight: 700; cursor: pointer">Надіслати</button>
+</div>
+</div>
+</div>
+
+<div style="margin-top: 16px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr)); gap: 16px">
+<div style="border-radius: 28px; background: #16181A; color: #FFFFFF; padding: 30px; display: flex; flex-direction: column; gap: 8px; min-height: 252px; box-sizing: border-box">
+<span style="font-size: 12px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; color: #9AA0A4">Плитка-цифра · статична</span>
+<span style="margin-top: auto; font-size: 44px; line-height: 1; font-weight: 800; letter-spacing: -2px; color: #8CC63F">500&nbsp;м²</span>
+<span style="font-size: 14.5px; line-height: 1.5; color: #C9CDD1">Сертифіковане укриття для всіх дітей</span>
+</div>
+<a class="tl" href="Parents.dc.html" data-deep="#pay" style="border-radius: 28px; background: #FFFFFF; color: #16181A; padding: 28px; display: flex; flex-direction: column; gap: 10px; min-height: 252px; box-sizing: border-box">
+<span style="display: flex; justify-content: space-between; align-items: flex-start">
+<span style="width: 44px; height: 44px; border-radius: 14px; background: #FDECEC; color: #C8161C; display: flex; align-items: center; justify-content: center"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1"></path><path d="M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4"></path></svg></span>
+<span class="ar" style="width: 44px; height: 44px; border-radius: 50%; background: #F1F2EE; color: #16181A; display: flex; align-items: center; justify-content: center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></span>
+</span>
+<span style="margin-top: auto; font-size: 19px; font-weight: 800; letter-spacing: -0.4px">Оплата онлайн</span>
+<span style="font-size: 14.5px; line-height: 1.55; color: #54585C">Плитка-посилання · уся плитка клікабельна, стрілка → внутрішня</span>
+</a>
+<a class="tl" href="Article.dc.html" style="border-radius: 28px; background: #FFFFFF; color: #16181A; padding: 12px 12px 24px; display: flex; flex-direction: column; gap: 14px; box-sizing: border-box">
+<div style="position: relative; aspect-ratio: 16 / 10; border-radius: 18px; overflow: hidden; background-color: #E6E1F2; background-image: repeating-linear-gradient(135deg, rgba(22,24,26,0.035) 0 1px, transparent 1px 12px); display: flex; align-items: flex-end; padding: 12px; box-sizing: border-box">
+<span style="display: inline-flex; align-items: center; gap: 8px; padding: 7px 12px; border-radius: 999px; background: rgba(255,255,255,0.86); font-size: 12px; font-weight: 700; color: #3A3E42"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"></path><circle cx="12" cy="13" r="3"></circle></svg>Фото: мажорет</span>
+</div>
+<span style="display: flex; flex-direction: column; gap: 8px; padding: 0 10px">
+<span style="display: flex; align-items: center; gap: 8px"><span style="padding: 4px 10px; border-radius: 999px; background: #EFEAFA; font-size: 12px; font-weight: 800; color: #5B3FA8">Спорт</span><time datetime="2026-10-09" style="font-size: 12.5px; font-weight: 700; color: #5F6366">09.10.2026</time></span>
+<span style="font-size: 19px; line-height: 1.3; font-weight: 800; letter-spacing: -0.4px">Призові місця на чемпіонаті світу з мажорет-спорту</span>
+</span>
+</a>
+<div style="border-radius: 28px; background: #5B3FA8; color: #FFFFFF; padding: 28px; display: flex; flex-direction: column; gap: 12px; min-height: 252px; box-sizing: border-box">
+<span style="width: 46px; height: 46px; border-radius: 50%; background: rgba(255,255,255,0.16); color: #FFFFFF; display: flex; align-items: center; justify-content: center; font-size: 15px; font-weight: 800">03</span>
+<span style="margin-top: 4px; font-size: 12.5px; font-weight: 800; letter-spacing: 1.4px; text-transform: uppercase; color: rgba(255,255,255,0.78)">Етап I</span>
+<span style="font-size: 20px; line-height: 1.2; font-weight: 800; letter-spacing: -0.5px">Заповніть анкету</span>
+<span style="font-size: 14px; line-height: 1.55; color: rgba(255,255,255,0.78)">Картка кроку: номер, етап, назва і коротке пояснення.</span>
+</div>
+<figure style="margin: 0; border-radius: 28px; background: #5B3FA8; color: #FFFFFF; padding: 28px; display: flex; flex-direction: column; gap: 14px; min-height: 252px; box-sizing: border-box">
+<span style="color: rgba(255,255,255,0.55)"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"></path><path d="M5 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"></path></svg></span>
+<blockquote style="margin: 0; font-size: 16px; line-height: 1.45; font-weight: 600">«Для нашої родини Новопечерська школа — це відкритий, розумний, розуміючий партнер.»</blockquote>
+<figcaption style="margin-top: auto; font-size: 13px; line-height: 1.4; color: rgba(255,255,255,0.78)"><b style="color: #FFFFFF">Марина Нікіфорчук</b> · мама Володимира</figcaption>
+</figure>
+</div>
+
+<div style="margin-top: 16px; display: flex; flex-wrap: wrap; gap: 16px">
+<div class="hide-sm" style="flex: 2 1 640px; min-width: 0; border-radius: 28px; background: #FFFFFF; padding: 32px; display: flex; flex-direction: column; gap: 18px; box-sizing: border-box">
+<div style="display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 8px 24px"><h3 style="margin: 0; font-size: 21px; line-height: 1.25; font-weight: 800; letter-spacing: -0.5px">Хедер · десктоп</h3><span style="font-size: 13.5px; color: #5F6366">Липкий, top 16 px · ≥1100: 6 розділів, мова, пошук, «Кабінет» ↗ · вужче — «Кабінет» + бургер</span></div>
+<div style="border-radius: 22px; background: #F1F2EE; padding: 20px; overflow-x: auto; box-sizing: border-box">
+<div style="display: flex; align-items: center; justify-content: space-between; gap: 16px 28px; padding: 10px 10px 10px 24px; background: #FFFFFF; border-radius: 999px; box-shadow: 0 6px 24px rgba(22,24,26,0.07)">
+<a href="Main.dc.html" aria-label="Новопечерська школа — на головну" style="display: flex; flex-direction: column; gap: 4px; line-height: 1; color: #16181A">
+<span style="font-size: 17px; font-weight: 800; letter-spacing: -0.4px">Новопечерська</span>
+<span style="font-size: 11px; font-weight: 700; letter-spacing: 2.6px; text-transform: uppercase; color: #5F6366">школа</span>
+</a>
+<div class="hdr-nav" style="display: flex; align-items: center; gap: 2px; font-size: 14px; font-weight: 600">
+<a class="nv" href="About.dc.html" style="padding: 12px 14px; border-radius: 999px; color: #3A3E42">Про школу</a>
+<a class="nv" href="Programs.dc.html" style="padding: 12px 14px; border-radius: 999px; color: #3A3E42">Навчання</a>
+<a href="Enrolment.dc.html" style="padding: 12px 14px; border-radius: 999px; background: #F1F2EE; color: #16181A">Вступ</a>
+<a class="nv" href="Parents.dc.html" style="padding: 12px 14px; border-radius: 999px; color: #3A3E42">Батькам</a>
+<a class="nv" href="News.dc.html" style="padding: 12px 14px; border-radius: 999px; color: #3A3E42">Новини</a>
+<a class="nv" href="Contacts.dc.html" style="padding: 12px 14px; border-radius: 999px; color: #3A3E42">Контакти</a>
+</div>
+<div style="display: flex; align-items: center; gap: 8px">
+<span class="hdr-lang" style="display: flex; align-items: center; padding: 3px; border-radius: 999px; background: #F1F2EE">
+<a href="Styleguide.dc.html" hreflang="uk" lang="uk" style="display: flex; align-items: center; justify-content: center; min-width: 44px; min-height: 40px; border-radius: 999px; background: #FFFFFF; color: #16181A; font-size: 12.5px; font-weight: 800">UA</a>
+<a href="#" hreflang="en" lang="en" style="display: flex; align-items: center; justify-content: center; min-width: 44px; min-height: 40px; border-radius: 999px; color: #5F6366; font-size: 12.5px; font-weight: 800">EN</a>
+</span>
+<button class="ib hdr-search" type="button" aria-label="Пошук на сайті" style="width: 44px; height: 44px; border-radius: 50%; border: 0; background: #F1F2EE; color: #16181A; display: flex; align-items: center; justify-content: center; cursor: pointer"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg></button>
+<a class="bp" href="https://school-today.com/" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 18px 0 16px; border-radius: 999px; background: #5B3FA8; color: #FFFFFF; font-size: 14px; font-weight: 700; white-space: nowrap"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="5"></circle><path d="M20 21a8 8 0 0 0-16 0"></path></svg>Кабінет<span class="sr"> батьків у School Today (відкриється в новій вкладці)</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></a>
+<a class="ib hdr-burger" href="MobileMenu.dc.html" aria-label="Відкрити меню" style="width: 44px; height: 44px; border-radius: 50%; background: #F1F2EE; color: #16181A; align-items: center; justify-content: center"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg></a>
+</div>
+</div>
+</div>
+</div>
+<div style="flex: 1 1 380px; min-width: 0; border-radius: 28px; background: #FFFFFF; padding: clamp(16px, 4vw, 32px); display: flex; flex-direction: column; gap: 18px; box-sizing: border-box">
+<div style="display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 8px 24px"><h3 style="margin: 0; font-size: 21px; line-height: 1.25; font-weight: 800; letter-spacing: -0.5px">Хедер · мобільний</h3><span style="font-size: 13.5px; color: #5F6366">&lt;600 px · 56 px, top 12 px</span></div>
+<div style="border-radius: 22px; background: #F1F2EE; padding: 8px; box-sizing: border-box">
+<div style="max-width: 366px; display: flex; align-items: center; justify-content: space-between; gap: 8px; padding: 6px 6px 6px 16px; background: #FFFFFF; border-radius: 999px; box-shadow: 0 6px 24px rgba(22,24,26,0.07); box-sizing: border-box">
+<a href="MobileHome.dc.html" aria-label="Новопечерська школа — на головну" style="display: flex; flex-direction: column; gap: 4px; line-height: 1; color: #16181A"><span style="font-size: 15px; font-weight: 800; letter-spacing: -0.4px">Новопечерська</span><span style="font-size: 10px; font-weight: 700; letter-spacing: 2.2px; text-transform: uppercase; color: #5F6366">школа</span></a>
+<span style="display: flex; align-items: center; gap: 6px">
+<a class="bp" href="https://school-today.com/" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 6px; min-height: 44px; padding: 0 14px; border-radius: 999px; background: #5B3FA8; color: #FFFFFF; font-size: 13.5px; font-weight: 700"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="5"></circle><path d="M20 21a8 8 0 0 0-16 0"></path></svg>Кабінет<span class="sr"> (відкриється в новій вкладці)</span></a>
+<a class="ib" href="MobileMenu.dc.html" aria-label="Відкрити меню" style="width: 44px; height: 44px; border-radius: 50%; background: #F1F2EE; color: #16181A; display: flex; align-items: center; justify-content: center"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg></a>
+</span>
+</div>
+</div>
+<p style="margin: 0; font-size: 14px; line-height: 1.6; color: #54585C">Бургер відкриває меню на весь екран: 6 розділів, швидкі дії «Оплатити», «Розклад дня», «Кабінет», контакти й «Записатися на екскурсію». Esc і × закривають меню й повертають фокус на бургер.</p>
+</div>
+</div>
+
+<div style="margin-top: 16px; display: flex; flex-wrap: wrap; gap: 16px">
+<div style="flex: 1 1 520px; min-width: 0; border-radius: 28px; background: #FFFFFF; padding: 32px; display: flex; flex-direction: column; gap: 18px; box-sizing: border-box">
+<h3 style="margin: 0; font-size: 21px; line-height: 1.25; font-weight: 800; letter-spacing: -0.5px">Фото-слот · світлий</h3>
+<div style="position: relative; aspect-ratio: 2 / 1; border-radius: 20px; overflow: hidden; background-color: #E3E7DC; background-image: repeating-linear-gradient(135deg, rgba(22,24,26,0.035) 0 1px, transparent 1px 12px); display: flex; align-items: flex-end; padding: 14px; box-sizing: border-box">
+<span style="display: inline-flex; align-items: center; gap: 8px; padding: 7px 12px; border-radius: 999px; background: rgba(255,255,255,0.86); font-size: 12px; font-weight: 700; color: #3A3E42"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"></path><circle cx="12" cy="13" r="3"></circle></svg>Фото: КДП, навчальні осередки</span>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 6px">
+<span style="padding: 5px 11px; border-radius: 999px; background: #E3E7DC; font-size: 12.5px; font-weight: 700; color: #3A3E42">Sage #E3E7DC</span>
+<span style="padding: 5px 11px; border-radius: 999px; background: #E6E1F2; font-size: 12.5px; font-weight: 700; color: #3A3E42">Lilac #E6E1F2</span>
+<span style="padding: 5px 11px; border-radius: 999px; background: #ECE7DD; font-size: 12.5px; font-weight: 700; color: #3A3E42">Sand #ECE7DD</span>
+<span style="padding: 5px 11px; border-radius: 999px; background: #E2E5E8; font-size: 12.5px; font-weight: 700; color: #3A3E42">Cool #E2E5E8</span>
+</div>
+</div>
+<div style="flex: 1 1 520px; min-width: 0; border-radius: 28px; background: #FFFFFF; padding: 32px; display: flex; flex-direction: column; gap: 18px; box-sizing: border-box">
+<h3 style="margin: 0; font-size: 21px; line-height: 1.25; font-weight: 800; letter-spacing: -0.5px">Фото-слот · темний, під текстом</h3>
+<div style="position: relative; aspect-ratio: 2 / 1; border-radius: 20px; overflow: hidden; background-color: #2B3034; background-image: repeating-linear-gradient(135deg, rgba(255,255,255,0.045) 0 1px, transparent 1px 14px); display: flex; flex-direction: column; justify-content: flex-end; padding: 22px; box-sizing: border-box">
+<div aria-hidden="true" style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(12,14,16,0) 35%, rgba(12,14,16,0.82) 100%)"></div>
+<span style="position: absolute; top: 14px; right: 14px; display: inline-flex; align-items: center; gap: 8px; padding: 7px 12px; border-radius: 999px; background: rgba(255,255,255,0.14); color: #FFFFFF; font-size: 12px; font-weight: 700"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"></path><circle cx="12" cy="13" r="3"></circle></svg>Фото: учні на уроці</span>
+<span style="position: relative; font-size: 28px; line-height: 1.08; font-weight: 800; letter-spacing: -1px; color: #FFFFFF">Білий текст — на затемненні знизу</span>
+</div>
+<p style="margin: 0; font-size: 14px; line-height: 1.6; color: #54585C">Кожен слот має <b style="color: #16181A">data-photo</b> (місце) і <b style="color: #16181A">data-photo-src</b> (фото з чинного сайту novoshkola.com.ua). Підпис «Фото: …» описує потрібний кадр; після заміни на справжнє фото підпис зникає, затемнення лишається.</p>
+</div>
+</div>
+</section>
+
+<section aria-labelledby="sg-icons" style="margin-top: 56px">
+<div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 16px 32px; padding: 0 8px 22px">
+<div style="display: flex; flex-direction: column; gap: 12px; max-width: 760px">
+<span class="eb">06 · Іконки</span>
+<h2 id="sg-icons" class="h2s">Lucide, штрих 2 px</h2>
+</div>
+<span style="max-width: 420px; font-size: 14.5px; line-height: 1.6; color: #5F6366">16–26 px · колір успадковують від тексту · декоративні приховані від скрінрідерів</span>
+</div>
+<div style="border-radius: 28px; background: #FFFFFF; padding: 28px; display: flex; flex-direction: column; gap: 20px; box-sizing: border-box">
+<div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(112px, 1fr)); gap: 10px">
+<div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg><span>arrow-right</span></div>
+<div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg><span>arrow-up-right</span></div>
+<div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14"></path><path d="m19 12-7 7-7-7"></path></svg><span>arrow-down</span></div>
+<div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 19-7-7 7-7"></path><path d="M19 12H5"></path></svg><span>arrow-left</span></div>
+<div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"></path></svg><span>chevron-right</span></div>
+<div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg><span>chevron-down</span></div>
+<div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="5"></circle><path d="M20 21a8 8 0 0 0-16 0"></path></svg><span>user-round</span></div>
+<div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg><span>search</span></div>
+<div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg><span>menu</span></div>
+<div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg><span>x</span></div>
+<div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg><span>link</span></div>
+<div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path><path d="M2 12h20"></path></svg><span>globe</span></div>
+<div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 2v4"></path><path d="M16 2v4"></path><rect width="18" height="18" x="3" y="4" rx="2"></rect><path d="M3 10h18"></path><path d="M8 14h.01"></path><path d="M12 14h.01"></path><path d="M16 14h.01"></path><path d="M8 18h.01"></path><path d="M12 18h.01"></path><path d="M16 18h.01"></path></svg><span>calendar-days</span></div>
+<div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg><span>clock</span></div>
+<div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10 7.75a.75.75 0 0 1 1.142-.638l3.664 2.249a.75.75 0 0 1 0 1.278l-3.664 2.25a.75.75 0 0 1-1.142-.64z"></path><path d="M12 17v4"></path><path d="M8 21h8"></path><rect x="2" y="3" width="20" height="14" rx="2"></rect></svg><span>monitor-play</span></div>
+<div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 21a8 8 0 0 0-16 0"></path><circle cx="10" cy="8" r="5"></circle><path d="M22 20c0-3.37-2-6.5-4-8a5 5 0 0 0-.45-8.3"></path></svg><span>users-round</span></div>
+<div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg><span>users</span></div>
+<div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1"></path><path d="M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4"></path></svg><span>wallet</span></div>
+<div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 7v14"></path><path d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"></path></svg><span>book-open</span></div>
+<div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m18 5-2.414-2.414A2 2 0 0 0 14.172 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2"></path><path d="M21.378 12.626a1 1 0 0 0-3.004-3.004l-4.01 4.012a2 2 0 0 0-.506.854l-.837 2.87a.5.5 0 0 0 .62.62l2.87-.837a2 2 0 0 0 .854-.506z"></path><path d="M8 18h1"></path></svg><span>file-pen-line</span></div>
+<div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2Zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2"></path><path d="M18 14h-8"></path><path d="M15 18h-5"></path><path d="M10 6h8v4h-8V6Z"></path></svg><span>newspaper</span></div>
+<div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"></path><circle cx="12" cy="13" r="3"></circle></svg><span>camera</span></div>
+<div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"></path><path d="M5 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"></path></svg><span>quote</span></div>
+<div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10 10v.2A3 3 0 0 1 8.9 16H5a3 3 0 0 1-1-5.8V10a3 3 0 0 1 6 0Z"></path><path d="M7 16v6"></path><path d="M13 19v3"></path><path d="M12 19h8.3a1 1 0 0 0 .7-1.7L18 14h.3a1 1 0 0 0 .7-1.7L16 9h.2a1 1 0 0 0 .8-1.7L13 3l-1.4 1.5"></path></svg><span>trees</span></div>
+<div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"></path><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"></path><path d="M4 22h16"></path><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"></path><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"></path><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"></path></svg><span>trophy</span></div>
+<div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.21 15 2.66 7.14a2 2 0 0 1 .13-2.2L4.4 2.8A2 2 0 0 1 6 2h12a2 2 0 0 1 1.6.8l1.6 2.14a2 2 0 0 1 .14 2.2L16.79 15"></path><path d="M11 12 5.12 2.2"></path><path d="m13 12 5.88-9.8"></path><path d="M8 7h8"></path><circle cx="12" cy="17" r="5"></circle><path d="M12 18v-2h-.5"></path></svg><span>medal</span></div>
+<div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14.4 14.4 9.6 9.6"></path><path d="M18.657 21.485a2 2 0 1 1-2.829-2.828l-1.767 1.768a2 2 0 1 1-2.829-2.829l6.364-6.364a2 2 0 1 1 2.829 2.829l-1.768 1.767a2 2 0 1 1 2.828 2.829z"></path><path d="m21.5 21.5-1.4-1.4"></path><path d="M3.9 3.9 2.5 2.5"></path><path d="M6.404 12.768a2 2 0 1 1-2.829-2.829l1.768-1.767a2 2 0 1 1-2.828-2.829l2.828-2.828a2 2 0 1 1 2.829 2.828l1.767-1.768a2 2 0 1 1 2.829 2.829z"></path></svg><span>dumbbell</span></div>
+<div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path><path d="m9 12 2 2 4-4"></path></svg><span>shield-check</span></div>
+<div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18V5l12-2v13"></path><circle cx="6" cy="18" r="3"></circle><circle cx="18" cy="16" r="3"></circle></svg><span>music</span></div>
+<div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"></path><path d="M7 2v20"></path><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"></path></svg><span>utensils</span></div>
+<div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg><span>phone</span></div>
+<div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z"></path><path d="m21.854 2.147-10.94 10.939"></path></svg><span>send</span></div>
+<div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg><span>facebook*</span></div>
+<div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line></svg><span>instagram*</span></div>
+<div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17"></path><path d="m10 15 5-3-5-3z"></path></svg><span>youtube*</span></div>
+</div>
+<p style="margin: 0; font-size: 13.5px; line-height: 1.6; color: #5F6366">* Знаки брендів (Facebook, Instagram, YouTube, Telegram, Viber) у продакшені беремо з Simple Icons: бренд-іконки в Lucide застаріли і більше не оновлюються.</p>
+</div>
+</section>
+
+<section aria-labelledby="sg-photo" style="margin-top: 56px">
+<div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 16px 32px; padding: 0 8px 22px">
+<div style="display: flex; flex-direction: column; gap: 12px; max-width: 760px">
+<span class="eb">07 · Фото</span>
+<h2 id="sg-photo" class="h2s">Справжні моменти з життя школи</h2>
+</div>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr)); gap: 16px">
+<div class="pc">
+<div class="ps" style="background-color: #E3E7DC"><span>Фото: перерва на подвір’ї</span></div>
+<span style="display: flex; flex-direction: column; gap: 6px; padding: 0 10px"><span style="font-size: 18px; font-weight: 800; letter-spacing: -0.4px">Живі моменти</span><span style="font-size: 14.5px; line-height: 1.55; color: #54585C">Уроки, перерви, свята — у процесі, без постановки.</span></span>
+</div>
+<div class="pc">
+<div class="ps" style="background-color: #ECE7DD"><span>Фото: клас біля вікна</span></div>
+<span style="display: flex; flex-direction: column; gap: 6px; padding: 0 10px"><span style="font-size: 18px; font-weight: 800; letter-spacing: -0.4px">Природне світло</span><span style="font-size: 14.5px; line-height: 1.55; color: #54585C">Денне світло з вікон, теплі тони, без спалаху.</span></span>
+</div>
+<div class="pc">
+<div class="ps" style="background-color: #E6E1F2"><span>Фото: дослід на уроці хімії</span></div>
+<span style="display: flex; flex-direction: column; gap: 6px; padding: 0 10px"><span style="font-size: 18px; font-weight: 800; letter-spacing: -0.4px">Діти в дії, а не на камеру</span><span style="font-size: 14.5px; line-height: 1.55; color: #54585C">Руки, досліди, рух — погляд спрямований на справу.</span></span>
+</div>
+<div class="pc">
+<div class="ps" style="background-color: #E2E5E8"><span>Фото: випуск 2026</span></div>
+<span style="display: flex; flex-direction: column; gap: 6px; padding: 0 10px"><span style="font-size: 18px; font-weight: 800; letter-spacing: -0.4px">Без стокових фото</span><span style="font-size: 14.5px; line-height: 1.55; color: #54585C">Лише власні кадри школи, учнів і вчителів.</span></span>
+</div>
+</div>
+<div style="margin-top: 16px; border-radius: 28px; background: #16181A; color: #FFFFFF; padding: 26px 32px; display: flex; flex-wrap: wrap; align-items: center; gap: 14px 22px; box-sizing: border-box">
+<span style="flex: none; width: 44px; height: 44px; border-radius: 14px; background: rgba(255,255,255,0.08); color: #8CC63F; display: flex; align-items: center; justify-content: center"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"></path><circle cx="12" cy="13" r="3"></circle></svg></span>
+<p style="flex: 1 1 480px; margin: 0; font-size: 15px; line-height: 1.6; color: #C9CDD1">У макетах фото поки замінені підписаними слотами. Кожен слот несе <b style="color: #FFFFFF">data-photo-src</b> — посилання на відповідне фото з чинного сайту novoshkola.com.ua, тож заміна робиться в один крок.</p>
+</div>
+</section>
+
+<section aria-labelledby="sg-nav" style="margin-top: 56px">
+<div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 16px 32px; padding: 0 8px 22px">
+<div style="display: flex; flex-direction: column; gap: 12px; max-width: 760px">
+<span class="eb">08 · Навігація</span>
+<h2 id="sg-nav" class="h2s">Меню сайту: було → стало</h2>
+</div>
+<span style="display: flex; flex-wrap: wrap; gap: 6px; font-size: 13px; font-weight: 700; color: #3A3E42"><span class="tg tg-n" style="margin: 0">нове</span><span class="tg tg-m" style="margin: 0">перенесено</span><span class="tg tg-j" style="margin: 0">об’єднано</span></span>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 16px">
+<div style="flex: 1 1 520px; min-width: 0; border-radius: 28px; background: #FFFFFF; padding: clamp(24px, 3vw, 40px); display: flex; flex-direction: column; gap: 6px; box-sizing: border-box">
+<span style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 12px; padding-bottom: 14px"><span style="font-size: 12.5px; font-weight: 800; letter-spacing: 1.4px; text-transform: uppercase; color: #5F6366">Було · novoshkola.com.ua</span><span class="nt">6 пунктів, 20 підпунктів</span></span>
+<div style="display: flex; flex-direction: column; gap: 10px; padding: 14px 0; border-top: 1px solid #EDEEEA">
+<span style="font-size: 17px; font-weight: 800; color: #3A3E42">Про Школу <span style="font-weight: 700; color: #5F6366">· 7</span></span>
+<span style="font-size: 14px; line-height: 1.7; font-weight: 600; color: #5F6366">Наші цінності · Положення про застосування української мови · Канадський диплом · Команда · Інфраструктура Школи · Навички ХХІ століття · Річні огляди</span>
+</div>
+<div style="display: flex; flex-direction: column; gap: 10px; padding: 14px 0; border-top: 1px solid #EDEEEA">
+<span style="font-size: 17px; font-weight: 800; color: #3A3E42">Вступ <span style="font-weight: 700; color: #5F6366">· 8</span></span>
+<span style="font-size: 14px; line-height: 1.7; font-weight: 600; color: #5F6366">Заповнити анкету на вступ · Процес вступу · Вартість навчання · Дошкільна підготовка · Початкова школа (1-4 класи) · Середня та старша школа (5-11 класи) · Вступ на українсько-канадську програму · Стипендіальна програма</span>
+</div>
+<div style="display: flex; flex-direction: column; gap: 10px; padding: 14px 0; border-top: 1px solid #EDEEEA">
+<span style="font-size: 17px; font-weight: 800; color: #3A3E42">Новини</span>
+</div>
+<div style="display: flex; flex-direction: column; gap: 10px; padding: 14px 0; border-top: 1px solid #EDEEEA">
+<span style="font-size: 17px; font-weight: 800; color: #3A3E42">Для батьків <span style="font-weight: 700; color: #5F6366">· 3</span></span>
+<span style="font-size: 14px; line-height: 1.7; font-weight: 600; color: #5F6366">Оплата онлайн · Договір приєднання · Довідник</span>
+</div>
+<div style="display: flex; flex-direction: column; gap: 10px; padding: 14px 0; border-top: 1px solid #EDEEEA">
+<span style="font-size: 17px; font-weight: 800; color: #3A3E42">Дистанційна освіта</span>
+</div>
+<div style="display: flex; flex-direction: column; gap: 10px; padding: 14px 0 0; border-top: 1px solid #EDEEEA">
+<span style="font-size: 17px; font-weight: 800; color: #3A3E42">Особистий кабінет <span style="font-weight: 700; color: #5F6366">· 2</span></span>
+<span style="font-size: 14px; line-height: 1.7; font-weight: 600; color: #5F6366">Увійти · Забули пароль?</span>
+</div>
+</div>
+<div style="flex: 1 1 520px; min-width: 0; border-radius: 28px; background: #FFFFFF; padding: clamp(24px, 3vw, 40px); display: flex; flex-direction: column; gap: 6px; box-sizing: border-box; box-shadow: inset 0 0 0 2px #5B3FA8">
+<span style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 12px; padding-bottom: 14px"><span style="font-size: 12.5px; font-weight: 800; letter-spacing: 1.4px; text-transform: uppercase; color: #5B3FA8">Стало · «Модульний бенто»</span><span style="padding: 5px 11px; border-radius: 999px; background: #EFEAFA; font-size: 12.5px; font-weight: 700; color: #5B3FA8">6 розділів · 21 підпункт · підпункти на сторінках розділів і у футері</span></span>
+<div style="display: flex; flex-direction: column; gap: 10px; padding: 14px 0; border-top: 1px solid #EDEEEA">
+<a href="About.dc.html" style="font-size: 17px; font-weight: 800; color: #16181A">Про школу <span style="font-weight: 700; color: #5F6366">· 6</span></a>
+<span style="font-size: 14px; line-height: 1.9; font-weight: 600; color: #3A3E42">Місія і цінності<span class="tg tg-m">перенесено</span> · Команда · Кампус і безпека<span class="tg tg-n">нове</span> · Лідер у мені<span class="tg tg-n">нове</span> · Річні огляди · Вакансії<span class="tg tg-m">перенесено</span></span>
+</div>
+<div style="display: flex; flex-direction: column; gap: 10px; padding: 14px 0; border-top: 1px solid #EDEEEA">
+<a href="Programs.dc.html" style="font-size: 17px; font-weight: 800; color: #16181A">Навчання<span class="tg tg-n">нове</span> <span style="font-weight: 700; color: #5F6366">· 6</span></a>
+<span style="font-size: 14px; line-height: 1.9; font-weight: 600; color: #3A3E42">Дошкільна підготовка<span class="tg tg-m">перенесено</span> · Початкова школа<span class="tg tg-m">перенесено</span> · Середня і старша школа<span class="tg tg-m">перенесено</span> · U-CAN<span class="tg tg-j">об’єднано</span> · Гуртки<span class="tg tg-n">нове</span> · Дистанційна школа<span class="tg tg-m">перенесено</span></span>
+</div>
+<div style="display: flex; flex-direction: column; gap: 10px; padding: 14px 0; border-top: 1px solid #EDEEEA">
+<a href="Enrolment.dc.html" style="font-size: 17px; font-weight: 800; color: #16181A">Вступ <span style="font-weight: 700; color: #5F6366">· 5</span></a>
+<span style="font-size: 14px; line-height: 1.9; font-weight: 600; color: #3A3E42">Процес вступу · Вартість навчання · Стипендіальна програма · Екскурсія<span class="tg tg-n">нове</span> · Анкета</span>
+</div>
+<div style="display: flex; flex-direction: column; gap: 10px; padding: 14px 0; border-top: 1px solid #EDEEEA">
+<a href="Parents.dc.html" style="font-size: 17px; font-weight: 800; color: #16181A">Батькам <span style="font-weight: 700; color: #5F6366">· 4</span></a>
+<span style="font-size: 14px; line-height: 1.9; font-weight: 600; color: #3A3E42">Оплата онлайн · Договір приєднання · Довідник · Кабінет School Today<span class="tg tg-m">перенесено</span></span>
+</div>
+<div style="display: flex; flex-direction: column; gap: 10px; padding: 14px 0; border-top: 1px solid #EDEEEA">
+<a href="News.dc.html" style="font-size: 17px; font-weight: 800; color: #16181A">Новини</a>
+</div>
+<div style="display: flex; flex-direction: column; gap: 10px; padding: 14px 0 0; border-top: 1px solid #EDEEEA">
+<a href="Contacts.dc.html" style="font-size: 17px; font-weight: 800; color: #16181A">Контакти<span class="tg tg-n">нове</span></a>
+</div>
+</div>
+</div>
+<div class="fmw" style="margin-top: 16px; border-radius: 28px; background: #FFFFFF; padding: clamp(24px, 3vw, 40px); display: flex; flex-direction: column; gap: 6px; box-sizing: border-box">
+<h3 style="margin: 0 0 10px; font-size: 21px; line-height: 1.25; font-weight: 800; letter-spacing: -0.5px">Куди перейшло</h3>
+<div class="fm"><b>Наші цінності</b><span>Про школу · Місія і цінності</span></div>
+<div class="fm"><b>Положення про застосування української мови</b><span>Батькам · Довідник [погодити зі школою]</span></div>
+<div class="fm"><b>Канадський диплом + Вступ на українсько-канадську програму</b><span>Навчання · U-CAN (одна сторінка замість двох)</span></div>
+<div class="fm"><b>Інфраструктура Школи</b><span>Про школу · Кампус і безпека</span></div>
+<div class="fm"><b>Навички ХХІ століття</b><span>Про школу</span></div>
+<div class="fm"><b>Дошкільна, початкова, середня та старша школа</b><span>Навчання — окремий розділ</span></div>
+<div class="fm"><b>Заповнити анкету на вступ</b><span>Кнопка «Заповнити анкету» на кожній сторінці</span></div>
+<div class="fm"><b>Дистанційна освіта</b><span>Навчання · Дистанційна школа</span></div>
+<div class="fm" style="border-bottom: 0"><b>Особистий кабінет</b><span>Кнопка «Кабінет» у хедері (School Today) і в меню</span></div>
+</div>
+</section>
+
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":11550}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return {};
+  }
+}
+</script>
+</body>
+</html>

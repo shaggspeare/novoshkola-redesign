@@ -1,0 +1,10 @@
+/* Export-only additions (not part of the canvas artboards) */
+@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+body.page--mobile{background:#DCDFD8}
+body.page--mobile #dc-root{display:flex;justify-content:center;padding:24px 0 48px}
+body.page--mobile #dc-root>div{box-shadow:0 24px 60px rgba(22,24,26,0.16)}
+/* photo slots: the real photo sits under the slot's content; the placeholder caption hides once it loads */
+[data-photo]{position:relative;isolation:isolate;overflow:hidden}
+.dc-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-1;display:block;border:0}
+.dc-photo:not([src]),.dc-photo[hidden]{display:none}
+.dc-photo[src]:not([hidden])~[data-photo-cap],.dc-photo[src]:not([hidden])~svg{display:none!important}

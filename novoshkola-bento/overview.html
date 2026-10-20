@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Новопечерська школа — концепт «Модульний бенто»</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#F1F2EE;color:#16181A;font-family:'Manrope',system-ui,-apple-system,'Segoe UI',sans-serif;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+a:focus-visible{outline:3px solid #5B3FA8;outline-offset:2px;box-shadow:0 0 0 2px #FFFFFF}
+.wrap{max-width:1200px;margin:0 auto;padding:clamp(24px,5vw,72px) clamp(16px,3vw,32px) 64px;display:flex;flex-direction:column;gap:40px}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:12.5px;font-weight:800;letter-spacing:1.4px;text-transform:uppercase;color:#5F6366}
+.eyebrow::before{content:"";width:26px;height:2px;background:#8CC63F}
+h1{margin:12px 0 0;font-size:clamp(36px,5vw,60px);line-height:1.04;font-weight:800;letter-spacing:-2px;text-wrap:balance}
+.lead{margin:16px 0 0;max-width:720px;font-size:18px;line-height:1.6;color:#54585C}
+h2{margin:0 0 14px;font-size:22px;font-weight:800;letter-spacing:-0.5px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(260px,100%),1fr));gap:16px}
+.card{display:flex;flex-direction:column;gap:8px;min-height:150px;padding:24px;border-radius:24px;background:#FFFFFF;transition:box-shadow .2s ease,transform .2s ease}
+@media (hover:hover){.card:hover{box-shadow:0 14px 34px rgba(22,24,26,0.09);transform:translateY(-2px)}}
+.card b{font-size:19px;font-weight:800;letter-spacing:-0.4px}
+.card span{font-size:14.5px;line-height:1.55;color:#5F6366}
+.card i{margin-top:auto;font-style:normal;font-size:12.5px;font-weight:700;color:#5B3FA8}
+.card.dark{background:#16181A;color:#FFFFFF}.card.dark span{color:#C9CDD1}.card.dark i{color:#8CC63F}
+.note{padding:24px 28px;border-radius:24px;background:#FFFFFF;font-size:15px;line-height:1.65;color:#3A3E42}
+.note p{margin:0 0 8px}.note p:last-child{margin:0}
+code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:13px;background:#F1F2EE;padding:2px 6px;border-radius:6px}
+</style>
+</head>
+<body>
+<main class="wrap">
+<header>
+<span class="eyebrow">Редизайн сайту · концепт</span>
+<h1>Новопечерська школа — «Модульний бенто»</h1>
+<p class="lead">Вісім адаптивних сторінок, три мобільні макети 390&nbsp;px і дизайн-система. Усе інтерактивне: меню, розклад дня, фільтри гуртків і новин, вибір класу вступу, форма зворотного зв’язку.</p>
+</header>
+
+<section aria-labelledby="g1">
+<h2 id="g1">Ключові сторінки</h2>
+<div class="grid">
+<a class="card dark" href="index.html"><b>Головна</b><span>Формат U-CAN, терміни вступу, один день у школі, кампус, новини, відгуки.</span><i>index.html</i></a>
+<a class="card" href="about.html"><b>Про школу</b><span>Чим ми відрізняємось, місія і цінності, «Лідер у мені», команда, кампус і безпека.</span><i>about.html</i></a>
+<a class="card" href="programs.html"><b>Навчання та U-CAN</b><span>КДП, 1–4, 5–11, U-CAN, розклад дня, 37 гуртків з фільтром за класом, дистанційна школа.</span><i>programs.html</i></a>
+<a class="card" href="enrolment.html"><b>Вступ</b><span>Вибір класу з документами й вартістю, шість кроків, ціни 2026/2027, запитання й відповіді.</span><i>enrolment.html</i></a>
+</div>
+</section>
+
+<section aria-labelledby="g2">
+<h2 id="g2">Сервісні сторінки</h2>
+<div class="grid">
+<a class="card" href="news.html"><b>Новини</b><span>Рубрики з фільтром, головне, стрічка.</span><i>news.html</i></a>
+<a class="card" href="article.html"><b>Новина — шаблон статті</b><span>Лід, цифри, цитата, галерея, «поділитися», старіша/новіша.</span><i>article.html</i></a>
+<a class="card" href="parents.html"><b>Батькам</b><span>Оплата, кабінет, договір, довідник, розклад, харчування, безпека, куди звернутися.</span><i>parents.html</i></a>
+<a class="card" href="contacts.html"><b>Контакти</b><span>Номери за призначенням, маршрути звернень, форма з перевіркою.</span><i>contacts.html</i></a>
+</div>
+</section>
+
+<section aria-labelledby="g3">
+<h2 id="g3">Мобільні макети та дизайн-система</h2>
+<div class="grid">
+<a class="card" href="mobile-home.html"><b>Мобільна — головна</b><span>Макет 390&nbsp;px з липкою панеллю запису.</span><i>mobile-home.html</i></a>
+<a class="card" href="mobile-menu.html"><b>Мобільна — меню</b><span>Пошук, швидкі дії, розділи-акордеони, контакти.</span><i>mobile-menu.html</i></a>
+<a class="card" href="mobile-enrolment.html"><b>Мобільна — вступ</b><span>Вибір класу, кроки, вартість, запитання.</span><i>mobile-enrolment.html</i></a>
+<a class="card dark" href="styleguide.html"><b>Дизайн-система</b><span>Принципи, колір і контраст, типографіка, сітка, компоненти, іконки, навігація «було → стало».</span><i>styleguide.html</i></a>
+</div>
+</section>
+
+<section class="note" aria-label="Примітки">
+<p><b>Сторінки адаптивні:</b> звузьте вікно — вужче за 1100&nbsp;px з’являється бургер-меню, вужче за 600&nbsp;px — компактний хедер і липка кнопка «Записатися на екскурсію».</p>
+<p><b>Фото</b> підтягуються з novoshkola.com.ua (як у прототипі v2); без інтернету лишаються стилізовані плейсхолдери з підписом потрібного кадру.</p>
+<p><b>Факти</b> — з чинного сайту школи (жовтень 2026); невідоме позначено [у квадратних дужках]. Деталі — у <code>README.md</code> і <code>ux-review.md</code>.</p>
+</section>
+</main>
+</body>
+</html>

@@ -1,0 +1,242 @@
+[
+  {
+    "page": "index.html",
+    "slot": "home-hero",
+    "caption": "учні на уроці, природне світло",
+    "src": "https://novoshkola.com.ua/resources/images/news/2355-IMG_8538%20(1).jpg"
+  },
+  {
+    "page": "index.html",
+    "slot": "home-kdp",
+    "caption": "КДП, навчальні осередки",
+    "src": "https://novoshkola.com.ua/resources/images/news/1216-0.63949500%201767099361.JPG"
+  },
+  {
+    "page": "index.html",
+    "slot": "home-primary",
+    "caption": "урок у міні-групі",
+    "src": "https://novoshkola.com.ua/resources/images/news/1216-0.32631300%201767099375.jpg"
+  },
+  {
+    "page": "index.html",
+    "slot": "home-secondary",
+    "caption": "проєктна робота, 9 клас",
+    "src": "https://novoshkola.com.ua/resources/images/news/4182-3%20(3).jpg"
+  },
+  {
+    "page": "index.html",
+    "slot": "home-ucan",
+    "caption": "урок англійською, U-CAN",
+    "src": "https://novoshkola.com.ua/resources/images/114608301.jpg"
+  },
+  {
+    "page": "index.html",
+    "slot": "home-campus",
+    "caption": "будівля і подвір’я школи",
+    "src": ""
+  },
+  {
+    "page": "index.html",
+    "slot": "home-news-majorette",
+    "caption": "команда мажорет на чемпіонаті світу",
+    "src": "https://novoshkola.com.ua/resources/images/news/9131-%D0%91%D0%B5%D0%B7%20%D0%BD%D0%B0%D0%B7%D0%B2%D0%B8%20(5251%20x%203501%20px)-7.jpg"
+  },
+  {
+    "page": "index.html",
+    "slot": "home-news-biology",
+    "caption": "",
+    "src": ""
+  },
+  {
+    "page": "index.html",
+    "slot": "home-news-azovstal",
+    "caption": "",
+    "src": ""
+  },
+  {
+    "page": "index.html",
+    "slot": "home-news-sept1",
+    "caption": "",
+    "src": ""
+  },
+  {
+    "page": "about.html",
+    "slot": "about-hero",
+    "caption": "учні Новопечерської школи",
+    "src": "https://novoshkola.com.ua/resources/images/news/2355-IMG_8538%20(1).jpg"
+  },
+  {
+    "page": "about.html",
+    "slot": "about-video",
+    "caption": "кадр із відео про школу",
+    "src": "https://novoshkola.com.ua/resources/images/114608301.jpg"
+  },
+  {
+    "page": "about.html",
+    "slot": "about-campus",
+    "caption": "будівля школи, вигляд з подвір’я",
+    "src": ""
+  },
+  {
+    "page": "programs.html",
+    "slot": "programs-hero",
+    "caption": "учні на занятті",
+    "src": "https://novoshkola.com.ua/resources/images/news/1216-0.63949500%201767099361.JPG"
+  },
+  {
+    "page": "programs.html",
+    "slot": "programs-kdp",
+    "caption": "КДП, робота в навчальних осередках",
+    "src": "https://novoshkola.com.ua/resources/images/nps1st-4861%282%29.jpg"
+  },
+  {
+    "page": "programs.html",
+    "slot": "programs-primary",
+    "caption": "урок англійської в групі",
+    "src": "https://novoshkola.com.ua/resources/images/news/1216-0.32631300%201767099375.jpg"
+  },
+  {
+    "page": "programs.html",
+    "slot": "programs-secondary",
+    "caption": "проєктна робота, 9 клас",
+    "src": "https://novoshkola.com.ua/resources/images/news/4182-3%20(3).jpg"
+  },
+  {
+    "page": "programs.html",
+    "slot": "programs-ucan",
+    "caption": "урок англійською, U-CAN",
+    "src": "https://novoshkola.com.ua/resources/images/Photo-241.jpg"
+  },
+  {
+    "page": "enrolment.html",
+    "slot": "enrol-hero",
+    "caption": "учні Новопечерської школи",
+    "src": "https://novoshkola.com.ua/resources/images/114608301.jpg"
+  },
+  {
+    "page": "news.html",
+    "slot": "news-featured-majorette",
+    "caption": "команда мажорет на чемпіонаті світу",
+    "src": "https://novoshkola.com.ua/resources/images/news/9131-%D0%91%D0%B5%D0%B7%20%D0%BD%D0%B0%D0%B7%D0%B2%D0%B8%20(5251%20x%203501%20px)-7.jpg"
+  },
+  {
+    "page": "news.html",
+    "slot": "news-featured-biology",
+    "caption": "зустріч з біологом Тарасом Перетятком",
+    "src": "https://novoshkola.com.ua/resources/images/news/8794-%D0%91%D0%B5%D0%B7%20%D0%BD%D0%B0%D0%B7%D0%B2%D0%B8%20(5251%20x%203501%20px)-9.jpg"
+  },
+  {
+    "page": "news.html",
+    "slot": "news-featured-azovstal",
+    "caption": "зустріч із Дмитром Козацьким",
+    "src": "https://novoshkola.com.ua/resources/images/news/6415-%D0%91%D0%B5%D0%B7%20%D0%BD%D0%B0%D0%B7%D0%B2%D0%B8%20(5251%20x%203501%20px)-11.jpg"
+  },
+  {
+    "page": "news.html",
+    "slot": "news-{{ it.id }}",
+    "caption": "",
+    "src": ""
+  },
+  {
+    "page": "article.html",
+    "slot": "article-hero",
+    "caption": "команда мажорет на чемпіонаті світу",
+    "src": "https://novoshkola.com.ua/resources/images/news/9131-%D0%91%D0%B5%D0%B7%20%D0%BD%D0%B0%D0%B7%D0%B2%D0%B8%20(5251%20x%203501%20px)-7.jpg"
+  },
+  {
+    "page": "article.html",
+    "slot": "article-gallery-1",
+    "caption": "",
+    "src": ""
+  },
+  {
+    "page": "article.html",
+    "slot": "article-gallery-2",
+    "caption": "",
+    "src": ""
+  },
+  {
+    "page": "article.html",
+    "slot": "article-gallery-3",
+    "caption": "",
+    "src": ""
+  },
+  {
+    "page": "article.html",
+    "slot": "article-gallery-4",
+    "caption": "",
+    "src": ""
+  },
+  {
+    "page": "article.html",
+    "slot": "article-related-azovstal",
+    "caption": "",
+    "src": "https://novoshkola.com.ua/resources/images/news/6415-%D0%91%D0%B5%D0%B7%20%D0%BD%D0%B0%D0%B7%D0%B2%D0%B8%20(5251%20x%203501%20px)-11.jpg"
+  },
+  {
+    "page": "article.html",
+    "slot": "article-related-novocamp",
+    "caption": "",
+    "src": ""
+  },
+  {
+    "page": "article.html",
+    "slot": "article-related-talents",
+    "caption": "",
+    "src": "https://novoshkola.com.ua/resources/images/news/1226-0.48007100%201787143156.jpg"
+  },
+  {
+    "page": "mobile-home.html",
+    "slot": "mhome-hero",
+    "caption": "учні на уроці",
+    "src": "https://novoshkola.com.ua/resources/images/news/2355-IMG_8538%20(1).jpg"
+  },
+  {
+    "page": "mobile-home.html",
+    "slot": "mhome-kdp",
+    "caption": "КДП, осередки",
+    "src": "https://novoshkola.com.ua/resources/images/news/1216-0.63949500%201767099361.JPG"
+  },
+  {
+    "page": "mobile-home.html",
+    "slot": "mhome-primary",
+    "caption": "урок у міні-групі",
+    "src": "https://novoshkola.com.ua/resources/images/news/1216-0.32631300%201767099375.jpg"
+  },
+  {
+    "page": "mobile-home.html",
+    "slot": "mhome-secondary",
+    "caption": "проєктна робота",
+    "src": "https://novoshkola.com.ua/resources/images/news/4182-3%20(3).jpg"
+  },
+  {
+    "page": "mobile-home.html",
+    "slot": "mhome-ucan",
+    "caption": "урок англійською",
+    "src": "https://novoshkola.com.ua/resources/images/114608301.jpg"
+  },
+  {
+    "page": "mobile-home.html",
+    "slot": "mhome-news-majorette",
+    "caption": "",
+    "src": "https://novoshkola.com.ua/resources/images/news/9131-%D0%91%D0%B5%D0%B7%20%D0%BD%D0%B0%D0%B7%D0%B2%D0%B8%20(5251%20x%203501%20px)-7.jpg"
+  },
+  {
+    "page": "mobile-home.html",
+    "slot": "mhome-news-biology",
+    "caption": "",
+    "src": ""
+  },
+  {
+    "page": "mobile-home.html",
+    "slot": "mhome-news-azovstal",
+    "caption": "",
+    "src": ""
+  },
+  {
+    "page": "mobile-enrolment.html",
+    "slot": "m-enrol-hero",
+    "caption": "учні школи",
+    "src": "https://novoshkola.com.ua/resources/images/114608301.jpg"
+  }
+]

@@ -1,0 +1,27 @@
+/* Новопечерська школа — «Модульний бенто» · shared base styles (the canvas artboards' helmet base block) */
+body{margin:0;background:#F1F2EE}
+a{color:#5B3FA8;text-decoration:none}a:hover{color:#4A3190}
+.nv{transition:background .15s,color .15s}.nv:hover{background:#F1F2EE !important;color:#16181A !important}
+.bp{transition:background .15s}.bp:hover{background:#4A3190 !important;color:#FFFFFF !important}
+.bg2{transition:background .15s}.bg2:hover{background:#7CB733 !important;color:#16181A !important}
+.bw{transition:background .15s}.bw:hover{background:#8CC63F !important;color:#16181A !important}
+.bo{transition:border-color .15s}.bo:hover{border-color:#FFFFFF !important;color:#FFFFFF !important}
+.bl{transition:background .15s,color .15s}.bl:hover{background:#16181A !important;color:#FFFFFF !important;border-color:#16181A !important}
+.tl{transition:box-shadow .2s ease,transform .2s ease}.tl:active{transform:scale(.99)}
+.ar{transition:background .15s,color .15s}
+@media (hover:hover){.tl:hover{box-shadow:0 14px 34px rgba(22,24,26,0.09) !important;transform:translateY(-2px)}.tl:hover .ar{background:#16181A !important;color:#FFFFFF !important}}
+.lk:hover{color:#16181A !important}
+.fl{transition:color .15s}.fl:hover{color:#FFFFFF !important}
+.ib{transition:background .15s}.ib:hover{background:#E4E6E1 !important}
+.sc:hover{background:#8CC63F !important;color:#16181A !important}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,summary:focus-visible{outline:3px solid #5B3FA8;outline-offset:2px;box-shadow:0 0 0 2px #FFFFFF}
+input::placeholder,textarea::placeholder{color:#6B6F73}
+[id]{scroll-margin-top:100px}
+.nw{white-space:nowrap}
+.sr{position:absolute !important;width:1px !important;height:1px !important;padding:0 !important;margin:-1px !important;overflow:hidden !important;clip:rect(0 0 0 0) !important;white-space:nowrap !important;border:0 !important}
+.skip{position:absolute;left:16px;top:-120px;z-index:300;padding:12px 18px;border-radius:999px;background:#16181A;color:#FFFFFF !important;font-weight:700}.skip:focus{top:16px}
+a[href^="tel:"]{white-space:nowrap}
+.hdr-burger{display:none !important}
+.mbar{display:none !important}
+@media (max-width:1099px){.hdr-nav,.hdr-lang,.hdr-search{display:none !important}.hdr-burger{display:flex !important}}
+@media (max-width:599px){.hdr{top:12px !important;margin:12px 0 16px !important;padding:6px 6px 6px 18px !important}.mbar{display:flex !important}.ft-nav{grid-template-columns:repeat(2,minmax(0,1fr)) !important}.ft-nav a{display:flex;align-items:center;min-height:44px}[id]{scroll-margin-top:84px}}

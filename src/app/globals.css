@@ -1,0 +1,122 @@
+/* Новопечерська школа — «Модульний бенто». Tokens and components live inline in the pages (as in the design
+   canvas); this file holds what inline styles can't: hover/focus states, responsive overrides, pseudo-elements. */
+
+/* ── base (design: assets/css/base.css) ── */
+body{margin:0;background:#F1F2EE}
+a{color:#5B3FA8;text-decoration:none}a:hover{color:#4A3190}
+.nv{transition:background .15s,color .15s}.nv:hover{background:#F1F2EE !important;color:#16181A !important}
+.bp{transition:background .15s}.bp:hover{background:#4A3190 !important;color:#FFFFFF !important}
+.bg2{transition:background .15s}.bg2:hover{background:#7CB733 !important;color:#16181A !important}
+.bw{transition:background .15s}.bw:hover{background:#8CC63F !important;color:#16181A !important}
+.bo{transition:border-color .15s}.bo:hover{border-color:#FFFFFF !important;color:#FFFFFF !important}
+.bl{transition:background .15s,color .15s}.bl:hover{background:#16181A !important;color:#FFFFFF !important;border-color:#16181A !important}
+.tl{transition:box-shadow .2s ease,transform .2s ease}.tl:active{transform:scale(.99)}
+.ar{transition:background .15s,color .15s}
+@media (hover:hover){.tl:hover{box-shadow:0 14px 34px rgba(22,24,26,0.09) !important;transform:translateY(-2px)}.tl:hover .ar{background:#16181A !important;color:#FFFFFF !important}}
+.lk:hover{color:#16181A !important}
+.fl{transition:color .15s}.fl:hover{color:#FFFFFF !important}
+.ib{transition:background .15s}.ib:hover{background:#E4E6E1 !important}
+.sc:hover{background:#8CC63F !important;color:#16181A !important}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,summary:focus-visible{outline:3px solid #5B3FA8;outline-offset:2px;box-shadow:0 0 0 2px #FFFFFF}
+input::placeholder,textarea::placeholder{color:#6B6F73}
+[id]{scroll-margin-top:100px}
+.nw{white-space:nowrap}
+.sr{position:absolute !important;width:1px !important;height:1px !important;padding:0 !important;margin:-1px !important;overflow:hidden !important;clip:rect(0 0 0 0) !important;white-space:nowrap !important;border:0 !important}
+.skip{position:absolute;left:16px;top:-120px;z-index:300;padding:12px 18px;border-radius:999px;background:#16181A;color:#FFFFFF !important;font-weight:700}.skip:focus{top:16px}
+a[href^="tel:"]{white-space:nowrap}
+.hdr-burger{display:none !important}
+.mbar{display:none !important}
+@media (max-width:1099px){.hdr-nav,.hdr-lang,.hdr-search{display:none !important}.hdr-burger{display:flex !important}}
+@media (max-width:599px){.hdr{top:12px !important;margin:12px 0 16px !important;padding:6px 6px 6px 18px !important}.mbar{display:flex !important}.ft-nav{grid-template-columns:repeat(2,minmax(0,1fr)) !important}.ft-nav a{display:flex;align-items:center;min-height:44px}[id]{scroll-margin-top:84px}}
+@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+
+/* ── photo slots: the photo sits under the slot's content ── */
+[data-photo]{position:relative;isolation:isolate;overflow:hidden}
+.dc-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-1;display:block;border:0}
+
+/* ── shared by several pages ── */
+.secnav{background:#F1F2EE}
+.chipb{transition:border-color .15s}.chipb:hover{border-color:#16181A !important}
+.card{position:relative}
+.card-link{color:#16181A}
+.card-link::after{content:"";position:absolute;inset:0;border-radius:28px;z-index:1}
+.clamp2{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.clamp3{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+@media (min-width:900px){
+.secnav{position:sticky;top:92px;z-index:40;flex-wrap:nowrap !important;overflow-x:auto;scrollbar-width:thin;padding-left:6px !important;padding-right:6px !important;margin-left:-6px !important;margin-right:-6px !important}.secnav>a{flex:none}
+body:has(.secnav) [id]{scroll-margin-top:170px}
+}
+@media (max-width:599px){.ph-m{min-height:0 !important;aspect-ratio:4/3}.ts{min-height:0 !important}.g2m{grid-template-columns:repeat(2,minmax(0,1fr)) !important}.num{font-size:clamp(30px,8vw,40px) !important;letter-spacing:-1.2px !important}.pad-m{padding:24px 20px !important}.h-hours{display:none !important}.h-bar{height:12px !important;gap:2px !important}}
+
+/* ── home ── */
+.lw:hover{color:#E2F3C9 !important}
+@media (max-width:767px){.h-picker{display:none !important}}
+@media (max-width:599px){
+.h-hero{min-height:560px !important;padding:22px !important}
+.h-hero-cta{flex-direction:column !important;align-items:stretch !important}
+.h-hero-cta>a{justify-content:center !important}
+.h-side>a,.h-side>div{padding:24px !important}
+.h-quick{grid-template-columns:repeat(2,minmax(0,1fr)) !important;gap:12px !important}
+.h-quick>a{min-height:156px !important;padding:18px !important;border-radius:24px !important}
+.h-quick .ar{display:none !important}
+.h-quick .h-qt{font-size:16px !important;line-height:1.25 !important}
+.h-quick .h-desc{font-size:13px !important;line-height:1.45 !important}
+.h-prog{display:flex !important;overflow-x:auto;scroll-snap-type:x mandatory;margin:0 -16px;padding:2px 16px 8px;scroll-padding-left:16px}
+.h-prog>a{flex:0 0 280px !important;scroll-snap-align:start}
+.h-stat-num{font-size:clamp(28px,7vw,36px) !important}
+.h-campus-hero{min-height:380px !important}
+.h-campus-stats{grid-template-columns:repeat(2,minmax(0,1fr)) !important;gap:12px !important}
+.h-cstat{min-height:168px !important;padding:18px 16px !important;border-radius:24px !important}
+.h-cnum{font-size:28px !important;letter-spacing:-1.2px !important}
+.h-cdesc{font-size:13px !important;line-height:1.45 !important}
+.h-ncard{padding:10px 16px 10px 10px !important;gap:14px !important}
+.h-nthumb{width:88px !important;height:88px !important}
+.h-ntitle{font-size:15px !important}
+}
+
+/* ── about ── */
+.span2{grid-column:span 2}
+@media (min-width:600px) and (max-width:899px){.span2{grid-column:auto}}
+@media (max-width:599px){.vid{min-height:0 !important;aspect-ratio:16/9;padding:20px !important}.vid-t{font-size:20px !important}.rv{padding:20px !important;min-width:0 !important}.rv .num{font-size:22px !important;letter-spacing:-0.6px !important}}
+
+/* ── programs ── */
+.only-m{display:none !important}
+@media (min-width:1100px){.uc-grid{grid-template-columns:1.3fr 1fr 1fr !important}.uc-cost{grid-row:span 2}.uc-req{grid-column:span 2}.uc-req ul{display:grid !important;grid-template-columns:repeat(3,minmax(0,1fr));gap:0 24px}.uc-req li{border-bottom:0 !important;padding:6px 0 0 !important}}
+@media (max-width:599px){.hscroll{display:flex !important;overflow-x:auto;scroll-snap-type:x mandatory;margin:0 -16px;padding:2px 16px 8px;scroll-padding-left:16px}.hscroll>*{flex:0 0 80% !important;scroll-snap-align:start;min-width:0}.only-d{display:none !important}.only-m{display:flex !important}.hide-m{display:none !important}[data-collapsed="true"]>li:nth-child(n+13){display:none !important}}
+
+/* ── enrolment ── */
+@media (max-width:599px){.hero-help{display:none !important}.lg{display:none !important}.step{padding:22px !important;min-height:0 !important;gap:10px !important}.step h3{font-size:19px !important}.hero-photo{min-height:520px !important;padding-top:68px !important}}
+
+/* ── news ── */
+.fchip[aria-pressed="false"]:hover{border-color:#16181A !important}
+.m-only{display:none !important}
+@media (max-width:599px){.chips{flex-wrap:nowrap !important;overflow-x:auto;scroll-snap-type:x proximity;margin:0 -24px !important;padding:2px 24px 6px !important;scrollbar-width:none}.chips::-webkit-scrollbar{display:none}.chips>button{flex:none;scroll-snap-align:start}.m-only{display:inline-flex !important}}
+@media (max-width:599px){.ncard{flex-direction:row !important;align-items:center !important;gap:14px !important;padding:10px 16px 10px 10px !important}.ncard-ph{flex:none !important;width:104px !important;height:104px !important;aspect-ratio:auto !important;padding:8px !important;border-radius:16px !important}.ncard-ph>span{display:none !important}.ncard-tx{padding:0 !important;gap:6px !important;min-width:0}.ncard-tx h3{font-size:16px !important;line-height:1.3 !important}.ncard-teaser{display:none !important}}
+
+/* ── article ── */
+.prose a{text-decoration:underline;text-decoration-thickness:1.5px;text-underline-offset:3px}
+.prose h2{margin:12px 0 0;font-size:26px;line-height:1.25;font-weight:800;letter-spacing:-0.6px;color:#16181A}
+.prose li::marker{color:#5B3FA8}
+.share-pill{display:none !important}
+.gal-n{display:none !important}
+@media (max-width:599px){.art-head-in{align-items:flex-start !important;text-align:left !important}.art-head-in>span,.art-head-in>div{justify-content:flex-start !important}.art-h1{letter-spacing:-0.035em !important}.art-hero{aspect-ratio:3 / 2 !important}.share-icons{display:none !important}.share-pill{display:inline-flex !important}}
+@media (max-width:599px){.art-row{display:contents !important}.art-body{order:1;flex:none !important;margin-top:16px;padding:24px 20px !important}.art-gallery{order:2;margin-top:40px !important}.art-aside{order:3;flex:none !important;margin-top:16px}.art-tags{order:4;margin-top:40px !important}}
+@media (max-width:599px){.art-callout{flex-direction:column !important;gap:12px !important;padding:22px 20px !important}.art-quote{padding:22px 20px !important}.art-quote-text{font-size:20px !important}}
+@media (max-width:599px){.gal{flex-wrap:nowrap !important;overflow-x:auto;scroll-snap-type:x mandatory;margin:0 -16px !important;padding:0 16px 6px !important;scrollbar-width:none}.gal::-webkit-scrollbar{display:none}.gal-col{display:contents !important}.gal-t{flex:0 0 85% !important;min-height:0 !important;aspect-ratio:4 / 3;scroll-snap-align:center}.gal-n{display:inline-flex !important}}
+
+/* ── parents ── */
+.pd summary{list-style:none;cursor:pointer}.pd summary::-webkit-details-marker{display:none}
+.pd-chev{transition:transform .15s}.pd[open] .pd-chev{transform:rotate(180deg)}
+@media (min-width:840px){.pa-wide{grid-column:span 2}}
+@media (max-width:599px){.pa-quick{min-height:168px !important}}
+
+/* ── contacts ── */
+.chip{transition:border-color .15s}
+.chip:has(input:focus-visible){outline:3px solid #5B3FA8;outline-offset:2px;box-shadow:0 0 0 2px #FFFFFF}
+@media (hover:hover){.chip:hover{border-color:#16181A !important}}
+@media (min-width:840px){.ct-wide{grid-column:span 2}}
+@media (max-width:599px){.ct-hero{display:contents !important}.ct-hero>*{flex:none !important}.ct-map{order:1 !important;min-height:280px !important;margin-top:16px !important;padding:56px 16px 28px !important}.ct-info{order:2 !important}}
+
+/* ── phone menu (design: mobile-menu.html) ── */
+.mr{transition:background .15s}.mr:hover{background:#F1F2EE !important}
+.ms{transition:background .15s}.ms:hover{background:#F7F5FC !important}
